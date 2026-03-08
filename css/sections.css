@@ -172,7 +172,7 @@
 .hero__device-wrapper {
   position: relative;
   perspective: 1000px;
-  max-width: 320px;
+  max-width: 220px;
   width: 100%;
 }
 
@@ -799,9 +799,7 @@
 
 .showcase__device {
   position: relative;
-  width: 300px;
-  height: auto;
-  aspect-ratio: auto;
+  width: 240px;
 }
 
 .showcase__device-img {
@@ -812,9 +810,22 @@
   border-radius: 8px;
 }
 
-.showcase__screen {
+/* First screen flows in-document to give the container height */
+.showcase__screen:first-child {
+  position: relative;
+}
+
+.showcase__screen:first-child .showcase__device-img {
+  width: 100%;
+}
+
+/* Subsequent screens overlay on top */
+.showcase__screen:not(:first-child) {
   position: absolute;
   inset: 0;
+}
+
+.showcase__screen {
   opacity: 0;
   transition: opacity 0.6s var(--ease-out-expo);
 }
