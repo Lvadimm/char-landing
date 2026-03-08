@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CHAR Privacy Policy — Learn how your data is stored locally, processed on-device, and never shared. 100% private health tracking.">
+  <meta name="author" content="Evo Solutions">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CHAR — Privacy Policy">
+  <meta property="og:description" content="Your data stays on your device. No cloud AI, no tracking, no ads.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lvadimm.github.io/char-landing/privacy.html">
+  <meta property="og:image" content="https://lvadimm.github.io/char-landing/assets/images/og-image.png">
+
+  <title>Privacy Policy — CHAR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: rgba(255, 158, 102, 0.3);
+      color: var(--color-text-primary);
+    }
+
+    a {
+      color: var(--color-brand);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--color-brand-light);
+    }
+
+    /* ─── Navigation ─── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--color-text-primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav__logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gradient-brand);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .nav__back {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-text-tertiary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav__back:hover {
+      color: var(--color-text-primary);
+    }
+
+    .nav__back svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ─── Page Container ─── */
+    .privacy-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+    }
+
+    /* ─── Header ─── */
+    .privacy-header {
+      margin-bottom: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .privacy-header__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(255, 158, 102, 0.08);
+      border: 1px solid rgba(255, 158, 102, 0.15);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-brand);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .privacy-header__tag svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .privacy-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--color-text-primary);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-header__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      color: var(--color-text-tertiary);
+      font-size: 0.9rem;
+    }
+
+    .privacy-header__meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ─── Table of Contents ─── */
+    .toc {
+      margin-bottom: 3.5rem;
+      padding: 1.75rem 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+    }
+
+    .toc__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1rem;
+    }
+
+    .toc__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .toc__list a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .toc__list a:hover {
+      color: var(--color-brand);
+      transform: translateX(4px);
+    }
+
+    .toc__list a span {
+      color: var(--color-brand);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      opacity: 0.6;
+    }
+
+    /* ─── Content Sections ─── */
+    .privacy-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 6rem;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .privacy-section h2 .section-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-brand);
+      opacity: 0.5;
+      min-width: 2ch;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .privacy-section p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      margin-bottom: 1.25rem;
+      padding-left: 0;
+    }
+
+    .privacy-section ul li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .privacy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-brand);
+      opacity: 0.5;
+    }
+
+    .privacy-section strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    /* ─── Highlight Boxes ─── */
+    .privacy-highlight {
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .privacy-highlight--info {
+      background: rgba(96, 165, 250, 0.06);
+      border: 1px solid rgba(96, 165, 250, 0.12);
+      color: #93C5FD;
+    }
+
+    .privacy-highlight--good {
+      background: rgba(74, 222, 128, 0.06);
+      border: 1px solid rgba(74, 222, 128, 0.12);
+      color: #86EFAC;
+    }
+
+    /* ─── Data Types Grid ─── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .data-grid__col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 0.75rem;
+    }
+
+    .data-grid__col ul li {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ─── Divider ─── */
+    .privacy-divider {
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      margin: 3rem 0;
+    }
+
+    /* ─── Contact Section ─── */
+    .privacy-contact {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      margin-top: 4rem;
+    }
+
+    .privacy-contact h2 {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-contact p {
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      text-align: center;
+    }
+
+    .privacy-contact__email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-brand);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 12px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .privacy-contact__email:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    /* ─── Footer ─── */
+    .privacy-footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--color-text-tertiary);
+      font-size: 0.8rem;
+    }
+
+    .privacy-footer a {
+      color: var(--color-text-secondary);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .privacy-page {
+        padding: 6rem 1.25rem 4rem;
+      }
+
+      .privacy-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .toc__list {
+        grid-template-columns: 1fr;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        padding: 0.75rem 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .privacy-header__meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ─── Navigation ─── -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon">C</div>
+        CHAR
+      </a>
+      <a href="index.html" class="nav__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- ─── Privacy Policy ─── -->
+  <main class="privacy-page">
+    <header class="privacy-header">
+      <div class="privacy-header__tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Privacy Policy
+      </div>
+      <h1>Your data stays<br>on your device.</h1>
+      <div class="privacy-header__meta">
+        <span>📱 CHAR — Nutrition &amp; Health Companion</span>
+        <span>📅 Last Updated: 1 March 2026</span>
+        <span>✅ Effective: 1 March 2026</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <div class="toc__title">Table of Contents</div>
+      <ol class="toc__list">
+        <li><a href="#introduction"><span>01</span> Introduction</a></li>
+        <li><a href="#information-collected"><span>02</span> Information We Collect</a></li>
+        <li><a href="#how-we-use"><span>03</span> How We Use Your Information</a></li>
+        <li><a href="#on-device-ai"><span>04</span> On-Device AI Processing</a></li>
+        <li><a href="#storage-security"><span>05</span> Data Storage &amp; Security</a></li>
+        <li><a href="#third-party"><span>06</span> Third-Party Services</a></li>
+        <li><a href="#data-sharing"><span>07</span> Data Sharing</a></li>
+        <li><a href="#data-retention"><span>08</span> Data Retention</a></li>
+        <li><a href="#your-rights"><span>09</span> Your Rights</a></li>
+        <li><a href="#children"><span>10</span> Children's Privacy</a></li>
+        <li><a href="#advertising"><span>11</span> Advertising &amp; Tracking</a></li>
+        <li><a href="#changes"><span>12</span> Changes to This Policy</a></li>
+        <li><a href="#contact"><span>13</span> Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. Introduction -->
+    <section class="privacy-section" id="introduction">
+      <h2><span class="section-number">01</span> Introduction</h2>
+      <p>This Privacy Policy describes how Evo Solutions ("we," "us," or "our") collects, uses, stores, and protects your information when you use the CHAR mobile application ("CHAR" or the "App"). We are committed to protecting your privacy and ensuring you understand how your data is handled.</p>
+      <p>By downloading, installing, or using CHAR, you agree to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the App.</p>
+    </section>
+
+    <!-- 2. Information We Collect -->
+    <section class="privacy-section" id="information-collected">
+      <h2><span class="section-number">02</span> Information We Collect</h2>
+
+      <h3>2.1 Information You Provide Directly</h3>
+      <p>When you use CHAR, you may voluntarily provide the following personal information:</p>
+      <ul>
+        <li><strong>Profile Information:</strong> Name, date of birth, gender, height, weight, target weight, activity level, and fitness goals.</li>
+        <li><strong>Profile Photo:</strong> An optional profile image stored locally on your device.</li>
+        <li><strong>Nutrition Data:</strong> Meal entries, food descriptions, calorie and macronutrient data, water intake, custom foods, and favourite meals.</li>
+        <li><strong>Body Measurements:</strong> Weight logs and body composition data.</li>
+        <li><strong>Workout Data:</strong> Exercise type, name, duration, and calories burned.</li>
+        <li><strong>Fasting Data:</strong> Fasting protocols, start and end times, and completion status.</li>
+        <li><strong>Mood &amp; Wellbeing Data:</strong> Mood ratings, journal notes, and associated tags.</li>
+        <li><strong>Habit Tracking:</strong> Habit names, completion logs, and associated notes.</li>
+        <li><strong>Progress Photos:</strong> Photos you choose to take or import to track your physical progress.</li>
+        <li><strong>Planner Data:</strong> Tasks, routines, categories, schedules, and completion logs.</li>
+      </ul>
+
+      <h3>2.2 Information Collected Automatically</h3>
+      <ul>
+        <li><strong>App Installation Date:</strong> Stored locally to manage trial period eligibility.</li>
+        <li><strong>Preference Settings:</strong> Your chosen units (metric/imperial), appearance mode, and notification preferences.</li>
+      </ul>
+
+      <h3>2.3 Information from Apple Health (HealthKit)</h3>
+      <p>With your explicit permission, CHAR reads and writes the following data types from Apple Health:</p>
+      <div class="data-grid">
+        <div class="data-grid__col">
+          <h4>Read from Apple Health</h4>
+          <ul>
+            <li>Active energy burned, basal energy burned, step count, distance walked/run, flights climbed, exercise time, stand hours</li>
+            <li>Body mass, body fat percentage, lean body mass</li>
+            <li>Dietary water, dietary energy consumed</li>
+            <li>Heart rate, heart rate variability (HRV), resting heart rate</li>
+            <li>Sleep analysis</li>
+            <li>Workouts</li>
+          </ul>
+        </div>
+        <div class="data-grid__col">
+          <h4>Written to Apple Health</h4>
+          <ul>
+            <li>Dietary energy consumed, dietary protein, carbohydrates, total fat, water intake</li>
+            <li>Body mass</li>
+            <li>Step count, active energy burned, distance</li>
+            <li>Workouts</li>
+            <li>Heart rate, HRV, resting heart rate</li>
+            <li>Sleep analysis</li>
+          </ul>
+        </div>
+      </div>
+      <p>You control which data types CHAR can read and write through the Apple Health app on your device. You may revoke these permissions at any time.</p>
+
+      <h3>2.4 Camera and Microphone Data</h3>
+      <ul>
+        <li><strong>Camera:</strong> Used for AI-powered food recognition (scanning meals) and barcode scanning. Camera images are processed entirely on your device and are never transmitted to external servers.</li>
+        <li><strong>Microphone:</strong> Used for voice-based meal logging. Audio is processed using Apple's Speech Recognition framework on your device.</li>
+      </ul>
+    </section>
+
+    <!-- 3. How We Use Your Information -->
+    <section class="privacy-section" id="how-we-use">
+      <h2><span class="section-number">03</span> How We Use Your Information</h2>
+      <p>We use your information solely to provide and improve the App's functionality:</p>
+      <ul>
+        <li><strong>Nutrition Tracking:</strong> To log, calculate, and display your daily nutrition intake and progress toward your health goals.</li>
+        <li><strong>AI-Powered Features:</strong> To provide on-device food recognition, voice meal entry, personalised nutrition insights, and AI coaching — all processed locally on your device using Apple's on-device machine learning and Foundation Models framework.</li>
+        <li><strong>Health Integration:</strong> To sync nutrition and fitness data with Apple Health for a unified health overview.</li>
+        <li><strong>Cross-Device Sync:</strong> To synchronise your data across your Apple devices using your personal iCloud account.</li>
+        <li><strong>Subscription Management:</strong> To verify and manage your subscription status through RevenueCat.</li>
+        <li><strong>Notifications:</strong> To send local reminders for meals, water intake, goals, streaks, and planner tasks (only if you grant permission).</li>
+        <li><strong>Food Database Lookups:</strong> To retrieve nutrition information when you scan a barcode or search for a food item.</li>
+      </ul>
+      <div class="privacy-highlight privacy-highlight--good">
+        We do not use your data for advertising, profiling, marketing, or any purpose unrelated to the App's core functionality.
+      </div>
+    </section>
+
+    <!-- 4. On-Device AI Processing -->
+    <section class="privacy-section" id="on-device-ai">
+      <h2><span class="section-number">04</span> On-Device AI Processing</h2>
+      <p>CHAR uses artificial intelligence to enhance your experience. It is important to understand that:</p>
+      <ul>
+        <li><strong>Food Recognition:</strong> Powered by an on-device CoreML model. Camera images are analysed entirely on your device. No images are sent to any server.</li>
+        <li><strong>Nutrition Insights &amp; AI Coach:</strong> Powered by Apple Foundation Models (Apple Intelligence), which runs entirely on your device. Your health and nutrition data is processed locally and never leaves your device for AI purposes.</li>
+        <li><strong>Voice Entry:</strong> Processed using Apple's on-device Speech Recognition framework.</li>
+      </ul>
+      <div class="privacy-highlight privacy-highlight--info">
+        No personal health, nutrition, or biometric data is sent to any AI service, cloud API, or third-party server for processing.
+      </div>
+    </section>
+
+    <!-- 5. Data Storage and Security -->
+    <section class="privacy-section" id="storage-security">
+      <h2><span class="section-number">05</span> Data Storage &amp; Security</h2>
+
+      <h3>5.1 Local Storage</h3>
+      <p>All your data is stored locally on your device using Apple's CoreData framework (SQLite database). This includes all nutrition entries, health data, habits, planner tasks, mood entries, progress photos, and personal profile information.</p>
+      <p>Progress photos and profile images are saved as files within the App's private sandbox on your device.</p>
+
+      <h3>5.2 iCloud Sync</h3>
+      <p>If you have iCloud enabled for CHAR, your data is synchronised across your devices using Apple's CloudKit service. This data is stored in your personal iCloud account and is governed by Apple's Privacy Policy. We do not have access to your iCloud data.</p>
+
+      <h3>5.3 Security Measures</h3>
+      <ul>
+        <li>All data in transit uses industry-standard TLS/HTTPS encryption.</li>
+        <li>All local data is protected by Apple's hardware encryption and your device passcode/biometrics.</li>
+        <li>We do not operate any proprietary servers. We do not store any of your personal data on our servers.</li>
+      </ul>
+    </section>
+
+    <!-- 6. Third-Party Services -->
+    <section class="privacy-section" id="third-party">
+      <h2><span class="section-number">06</span> Third-Party Services</h2>
+      <p>CHAR integrates with the following third-party services, each with their own privacy policies:</p>
+
+      <h3>6.1 RevenueCat (Subscription Management)</h3>
+      <p>We use RevenueCat to manage in-app subscriptions. RevenueCat receives:</p>
+      <ul>
+        <li>An anonymous, randomly generated user identifier</li>
+        <li>App Store purchase receipts (processed by Apple)</li>
+      </ul>
+      <p>RevenueCat does not receive your name, email, health data, or any personal content. For more information, see <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</p>
+
+      <h3>6.2 Open Food Facts (Barcode Lookup)</h3>
+      <p>When you scan a food barcode, the barcode number (EAN-8/EAN-13) is sent to Open Food Facts, an open-source food database, to retrieve nutrition information. No personal data is transmitted. For more information, see <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">Open Food Facts' Privacy Policy</a>.</p>
+
+      <h3>6.3 USDA FoodData Central (Food Search)</h3>
+      <p>When you search for a food item, your search query text is sent to the USDA FoodData Central API, a free U.S. government nutrition database. No personal data is transmitted. For more information, see <a href="https://www.usda.gov/privacy-policy" target="_blank" rel="noopener">USDA's Privacy Policy</a>.</p>
+
+      <h3>6.4 Apple Services</h3>
+      <ul>
+        <li><strong>Apple HealthKit:</strong> Governed by Apple's strict HealthKit guidelines. CHAR never uses HealthKit data for advertising or shares it with third parties.</li>
+        <li><strong>Apple CloudKit (iCloud):</strong> Your synced data is stored in your personal iCloud account under Apple's privacy protections.</li>
+        <li><strong>Apple Intelligence (Foundation Models):</strong> All AI processing occurs on-device under Apple's privacy framework. No data is sent to Apple for AI processing.</li>
+      </ul>
+    </section>
+
+    <!-- 7. Data Sharing -->
+    <section class="privacy-section" id="data-sharing">
+      <h2><span class="section-number">07</span> Data Sharing</h2>
+      <div class="privacy-highlight privacy-highlight--good">
+        We do not sell, rent, trade, or share your personal data with any third party for marketing, advertising, or any commercial purpose.
+      </div>
+      <p>Your data may be shared only in the following limited circumstances:</p>
+      <ul>
+        <li><strong>Apple iCloud:</strong> If you enable iCloud sync, your data is stored in your personal iCloud account.</li>
+        <li><strong>Apple Health:</strong> If you grant permission, nutrition and fitness data is exchanged with Apple Health.</li>
+        <li><strong>Service Providers:</strong> As described in Section 6, limited non-personal data (barcodes, food search queries, anonymous purchase receipts) is sent to third-party services solely to provide App functionality.</li>
+        <li><strong>Legal Requirements:</strong> We may disclose information if required by law, legal process, or governmental request.</li>
+      </ul>
+    </section>
+
+    <!-- 8. Data Retention -->
+    <section class="privacy-section" id="data-retention">
+      <h2><span class="section-number">08</span> Data Retention</h2>
+      <p>Your data is stored on your device and in your iCloud account for as long as you use the App. We do not independently retain any of your data on our servers.</p>
+      <ul>
+        <li><strong>Deletion by User:</strong> You can delete all your data at any time using the "Delete All Data" option in the App's Settings.</li>
+        <li><strong>Uninstallation:</strong> Removing the App from your device will delete all locally stored data. iCloud data may persist in your iCloud account until you delete it through your iCloud settings.</li>
+        <li><strong>Subscription Data:</strong> RevenueCat retains anonymous purchase records in accordance with their data retention policy.</li>
+      </ul>
+    </section>
+
+    <!-- 9. Your Rights -->
+    <section class="privacy-section" id="your-rights">
+      <h2><span class="section-number">09</span> Your Rights</h2>
+      <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
+
+      <h3>9.1 For All Users</h3>
+      <ul>
+        <li><strong>Access:</strong> View all your data directly within the App at any time.</li>
+        <li><strong>Deletion:</strong> Delete all your data using the "Delete All Data" feature in Settings.</li>
+        <li><strong>HealthKit Control:</strong> Grant or revoke Apple Health permissions at any time through the Apple Health app.</li>
+        <li><strong>Notification Control:</strong> Enable or disable notifications at any time through your device Settings.</li>
+      </ul>
+
+      <h3>9.2 For European Economic Area (EEA) Residents (GDPR)</h3>
+      <p>Under the General Data Protection Regulation, you additionally have the right to:</p>
+      <ul>
+        <li>Request access to your personal data</li>
+        <li>Request rectification of inaccurate data</li>
+        <li>Request erasure of your data ("right to be forgotten")</li>
+        <li>Object to or restrict processing of your data</li>
+        <li>Data portability</li>
+      </ul>
+      <p>To exercise these rights, contact us at the address provided in Section 13.</p>
+      <p><strong>Legal Basis for Processing (GDPR):</strong> We process your data based on your consent (provided when you create a profile and grant permissions) and the necessity to perform the service you have requested.</p>
+
+      <h3>9.3 For California Residents (CCPA/CPRA)</h3>
+      <p>Under the California Consumer Privacy Act, you have the right to:</p>
+      <ul>
+        <li>Know what personal information is collected and how it is used</li>
+        <li>Request deletion of your personal information</li>
+        <li>Opt out of the sale of personal information — <em>we do not sell your personal information</em></li>
+        <li>Non-discrimination for exercising your privacy rights</li>
+      </ul>
+    </section>
+
+    <!-- 10. Children's Privacy -->
+    <section class="privacy-section" id="children">
+      <h2><span class="section-number">10</span> Children's Privacy</h2>
+      <p>CHAR is not directed at children under the age of 13 (or the applicable age of consent in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will promptly delete such information.</p>
+    </section>
+
+    <!-- 11. Advertising and Tracking -->
+    <section class="privacy-section" id="advertising">
+      <h2><span class="section-number">11</span> Advertising &amp; Tracking</h2>
+      <div class="privacy-highlight privacy-highlight--good">
+        CHAR contains no advertising, no tracking SDKs, no analytics services, and no user behaviour monitoring.
+      </div>
+      <p>We do not collect device identifiers for advertising (IDFA), and we do not participate in any advertising networks.</p>
+    </section>
+
+    <!-- 12. Changes to This Privacy Policy -->
+    <section class="privacy-section" id="changes">
+      <h2><span class="section-number">12</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last Updated" date at the top of this policy. We encourage you to review this policy periodically.</p>
+      <p>Continued use of the App after changes constitutes acceptance of the updated Privacy Policy.</p>
+    </section>
+
+    <hr class="privacy-divider">
+
+    <!-- 13. Contact Us -->
+    <div class="privacy-contact" id="contact">
+      <h2><span class="section-number">13</span> Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+      <a href="mailto:Char@liftzoneworkouts.com" class="privacy-contact__email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Char@liftzoneworkouts.com
+      </a>
+    </div>
+  </main>
+
+  <footer class="privacy-footer">
+    <p>&copy; 2026 Evo Solutions. All rights reserved.</p>
+    <p style="margin-top: 0.5rem"><a href="index.html">Back to CHAR Home</a></p>
+  </footer>
+</body>
+</html>
