@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CHAR — Your all-in-one AI-powered health, nutrition, and productivity companion. Track calories, macros, fasting, workouts, mood, habits, and plan your day — all with on-device Apple Intelligence. 100% private.">
+  <meta name="keywords" content="CHAR app, calorie tracker, nutrition tracker, macro tracker, AI food scanner, intermittent fasting, workout tracker, meal planner, health app, iOS app, Apple Intelligence, on-device AI, privacy-first">
+  <meta name="author" content="Evo Solutions">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CHAR — AI Health & Productivity Companion">
+  <meta property="og:description" content="Track nutrition, fast smarter, plan your day — powered by on-device AI. 100% private.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CHAR — AI Health & Productivity Companion">
+  <meta name="twitter:description" content="Track nutrition, fast smarter, plan your day — powered by on-device AI. 100% private.">
+
+  <title>CHAR — AI Health & Productivity Companion</title>
+
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+</head>
+<body>
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- LOADING SCREEN                                  -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">
+        <svg class="loader__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="url(#loader-grad)"/>
+          <path d="M14 24C14 18.477 18.477 14 24 14C29.523 14 34 18.477 34 24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 24C18 20.686 20.686 18 24 18C27.314 18 30 20.686 30 24C30 27.314 27.314 30 24 30" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <circle cx="24" cy="24" r="3" fill="white"/>
+          <defs>
+            <linearGradient id="loader-grad" x1="0" y1="0" x2="48" y2="48">
+              <stop stop-color="#FF9E66"/>
+              <stop offset="1" stop-color="#FF6B35"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="loader__progress">
+        <div class="loader__bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- CURSOR GLOW (desktop only)                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- NAVIGATION                                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="#" class="nav__logo" aria-label="CHAR Home">
+        <svg class="nav__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="url(#nav-grad)"/>
+          <path d="M12 20C12 15.582 15.582 12 20 12C24.418 12 28 15.582 28 20" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M15 20C15 17.239 17.239 15 20 15C22.761 15 25 17.239 25 20C25 22.761 22.761 25 20 25" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+          <circle cx="20" cy="20" r="2.5" fill="white"/>
+          <defs>
+            <linearGradient id="nav-grad" x1="0" y1="0" x2="40" y2="40">
+              <stop stop-color="#FF9E66"/>
+              <stop offset="1" stop-color="#FF6B35"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="nav__brand">CHAR</span>
+      </a>
+
+      <div class="nav__links" id="nav-links">
+        <a href="#features" class="nav__link">Features</a>
+        <a href="#ai" class="nav__link">Intelligence</a>
+        <a href="#ecosystem" class="nav__link">Ecosystem</a>
+        <a href="#privacy" class="nav__link">Privacy</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+      </div>
+
+      <div class="nav__actions">
+        <a href="#download" class="btn btn--primary btn--sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+        <button class="nav__menu-btn" id="nav-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__content">
+      <a href="#features" class="mobile-menu__link">Features</a>
+      <a href="#ai" class="mobile-menu__link">Intelligence</a>
+      <a href="#ecosystem" class="mobile-menu__link">Ecosystem</a>
+      <a href="#privacy" class="mobile-menu__link">Privacy</a>
+      <a href="#pricing" class="mobile-menu__link">Pricing</a>
+      <a href="#download" class="btn btn--primary btn--lg mobile-menu__cta">Download CHAR</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HERO SECTION                                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient-orb hero__gradient-orb--1"></div>
+      <div class="hero__gradient-orb hero__gradient-orb--2"></div>
+      <div class="hero__gradient-orb hero__gradient-orb--3"></div>
+      <div class="hero__grid-overlay"></div>
+    </div>
+
+    <div class="hero__container">
+      <div class="hero__content">
+        <div class="hero__badge reveal-up">
+          <span class="hero__badge-dot"></span>
+          Powered by On-Device Apple Intelligence
+        </div>
+
+        <h1 class="hero__title reveal-up" data-delay="0.1">
+          Your Health.<br>
+          <span class="gradient-text">Intelligently</span> Understood.
+        </h1>
+
+        <p class="hero__subtitle reveal-up" data-delay="0.2">
+          Track nutrition, fast smarter, plan your day, and unlock AI-powered 
+          insights — all in one beautifully designed app. 100% on-device. 
+          100% private.
+        </p>
+
+        <div class="hero__actions reveal-up" data-delay="0.3">
+          <a href="#download" class="btn btn--primary btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download for iOS
+          </a>
+          <a href="#features" class="btn btn--ghost btn--lg">
+            Explore Features
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="hero__stats reveal-up" data-delay="0.4">
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="30">0</span><span class="hero__stat-suffix">+</span>
+            <span class="hero__stat-label">Features</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="100">0</span><span class="hero__stat-suffix">%</span>
+            <span class="hero__stat-label">On-Device AI</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="0">0</span>
+            <span class="hero__stat-label">Data Sent to Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal-scale">
+        <div class="hero__phone-wrapper">
+          <div class="hero__phone">
+            <div class="hero__phone-frame">
+              <div class="hero__phone-notch"></div>
+              <div class="hero__phone-screen">
+                <!-- Placeholder for app screenshot -->
+                <div class="hero__phone-content">
+                  <div class="mock-status-bar">
+                    <span>9:41</span>
+                    <div class="mock-status-icons">
+                      <span class="mock-signal"></span>
+                      <span class="mock-wifi"></span>
+                      <span class="mock-battery"></span>
+                    </div>
+                  </div>
+                  <div class="mock-app-screen">
+                    <div class="mock-greeting">Good Morning</div>
+                    <div class="mock-calorie-ring">
+                      <svg viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,158,102,0.15)" stroke-width="8"/>
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="url(#ring-grad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="98" transform="rotate(-90 60 60)"/>
+                        <defs><linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9E66"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs>
+                      </svg>
+                      <div class="mock-calorie-text">
+                        <span class="mock-calorie-number">1,420</span>
+                        <span class="mock-calorie-unit">kcal left</span>
+                      </div>
+                    </div>
+                    <div class="mock-macros">
+                      <div class="mock-macro"><div class="mock-macro-bar" style="--w: 65%; --c: #4ADE80"></div><span>Protein 85g</span></div>
+                      <div class="mock-macro"><div class="mock-macro-bar" style="--w: 45%; --c: #FBBF24"></div><span>Carbs 120g</span></div>
+                      <div class="mock-macro"><div class="mock-macro-bar" style="--w: 35%; --c: #60A5FA"></div><span>Fat 28g</span></div>
+                    </div>
+                    <div class="mock-cards">
+                      <div class="mock-card">
+                        <span class="mock-card-icon">🔥</span>
+                        <span class="mock-card-label">Streak</span>
+                        <span class="mock-card-value">12 days</span>
+                      </div>
+                      <div class="mock-card">
+                        <span class="mock-card-icon">💧</span>
+                        <span class="mock-card-label">Water</span>
+                        <span class="mock-card-value">1.5L</span>
+                      </div>
+                      <div class="mock-card">
+                        <span class="mock-card-icon">⚡</span>
+                        <span class="mock-card-label">Energy</span>
+                        <span class="mock-card-value">82%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__phone-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-mouse">
+        <div class="hero__scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BRAND MARQUEE                                   -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__content">
+        <span>Nutrition Tracking</span>
+        <span class="marquee__dot">●</span>
+        <span>AI Food Scanner</span>
+        <span class="marquee__dot">●</span>
+        <span>Intermittent Fasting</span>
+        <span class="marquee__dot">●</span>
+        <span>Workout Logging</span>
+        <span class="marquee__dot">●</span>
+        <span>Focus Timer</span>
+        <span class="marquee__dot">●</span>
+        <span>Daily Planner</span>
+        <span class="marquee__dot">●</span>
+        <span>Mood Tracking</span>
+        <span class="marquee__dot">●</span>
+        <span>Habit Builder</span>
+        <span class="marquee__dot">●</span>
+        <span>Weight Management</span>
+        <span class="marquee__dot">●</span>
+        <span>Progress Photos</span>
+        <span class="marquee__dot">●</span>
+        <span>Apple Health Sync</span>
+        <span class="marquee__dot">●</span>
+        <span>Siri Shortcuts</span>
+        <span class="marquee__dot">●</span>
+        <!-- Duplicate for seamless loop -->
+        <span>Nutrition Tracking</span>
+        <span class="marquee__dot">●</span>
+        <span>AI Food Scanner</span>
+        <span class="marquee__dot">●</span>
+        <span>Intermittent Fasting</span>
+        <span class="marquee__dot">●</span>
+        <span>Workout Logging</span>
+        <span class="marquee__dot">●</span>
+        <span>Focus Timer</span>
+        <span class="marquee__dot">●</span>
+        <span>Daily Planner</span>
+        <span class="marquee__dot">●</span>
+        <span>Mood Tracking</span>
+        <span class="marquee__dot">●</span>
+        <span>Habit Builder</span>
+        <span class="marquee__dot">●</span>
+        <span>Weight Management</span>
+        <span class="marquee__dot">●</span>
+        <span>Progress Photos</span>
+        <span class="marquee__dot">●</span>
+        <span>Apple Health Sync</span>
+        <span class="marquee__dot">●</span>
+        <span>Siri Shortcuts</span>
+        <span class="marquee__dot">●</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FEATURES SECTION                                -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Features</span>
+        <h2 class="section-title reveal-up" data-delay="0.1">Everything you need.<br><span class="gradient-text">Nothing you don't.</span></h2>
+        <p class="section-subtitle reveal-up" data-delay="0.2">One app replaces your calorie counter, fasting timer, workout log, habit tracker, planner, and more — beautifully unified.</p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento" id="bento-grid">
+        <!-- Large card: Nutrition -->
+        <div class="bento__card bento__card--lg reveal-up" data-delay="0.1">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--orange">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 class="bento__title">Smart Nutrition Tracking</h3>
+            <p class="bento__desc">Log meals via AI camera, barcode scanner, voice, or manual entry. Get instant calorie and macro breakdowns with adaptive daily goals.</p>
+            <div class="bento__visual bento__visual--nutrition">
+              <div class="bento__nutrition-ring">
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,158,102,0.1)" stroke-width="6"/>
+                  <circle class="bento__ring-progress" cx="50" cy="50" r="42" fill="none" stroke="url(#bento-ring)" stroke-width="6" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="79" transform="rotate(-90 50 50)"/>
+                  <defs><linearGradient id="bento-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9E66"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs>
+                </svg>
+                <span class="bento__ring-label">1,850<small>kcal</small></span>
+              </div>
+              <div class="bento__macro-pills">
+                <span class="bento__pill bento__pill--protein">P 140g</span>
+                <span class="bento__pill bento__pill--carbs">C 200g</span>
+                <span class="bento__pill bento__pill--fat">F 65g</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium card: Fasting -->
+        <div class="bento__card bento__card--md reveal-up" data-delay="0.2">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--purple">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="bento__title">Intermittent Fasting</h3>
+            <p class="bento__desc">6 protocols including 16:8, 20:4, and OMAD. Live timer on your Lock Screen and Dynamic Island.</p>
+            <div class="bento__visual bento__visual--fasting">
+              <div class="bento__timer">
+                <div class="bento__timer-ring">
+                  <svg viewBox="0 0 80 80">
+                    <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,0.15)" stroke-width="5"/>
+                    <circle class="bento__timer-progress" cx="40" cy="40" r="34" fill="none" stroke="#A855F7" stroke-width="5" stroke-linecap="round" stroke-dasharray="214" stroke-dashoffset="64" transform="rotate(-90 40 40)"/>
+                  </svg>
+                  <span class="bento__timer-text">12:34</span>
+                </div>
+                <span class="bento__timer-label">16:8 Protocol</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium card: Planner -->
+        <div class="bento__card bento__card--md reveal-up" data-delay="0.3">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--teal">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3 class="bento__title">Smart Planner</h3>
+            <p class="bento__desc">Speak tasks naturally. NLP parser understands "Gym at 5pm, 1 hour, high priority" and creates structured entries.</p>
+            <div class="bento__visual bento__visual--planner">
+              <div class="bento__tasks">
+                <div class="bento__task bento__task--done"><span class="bento__check">✓</span> Morning workout</div>
+                <div class="bento__task bento__task--done"><span class="bento__check">✓</span> Meal prep</div>
+                <div class="bento__task bento__task--active"><span class="bento__check-empty"></span> Review quarterly report</div>
+                <div class="bento__task"><span class="bento__check-empty"></span> Evening walk</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small card: Focus Timer -->
+        <div class="bento__card bento__card--sm reveal-up" data-delay="0.15">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <h3 class="bento__title">Focus Timer</h3>
+            <p class="bento__desc">Pomodoro & deep work modes with Dynamic Island support.</p>
+          </div>
+        </div>
+
+        <!-- Small card: Mood -->
+        <div class="bento__card bento__card--sm reveal-up" data-delay="0.25">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--pink">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3 class="bento__title">Mood Tracking</h3>
+            <p class="bento__desc">Daily check-ins synced to Apple Health State of Mind.</p>
+          </div>
+        </div>
+
+        <!-- Small card: Habits -->
+        <div class="bento__card bento__card--sm reveal-up" data-delay="0.35">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="bento__title">Habit Builder</h3>
+            <p class="bento__desc">Build streaks. Track daily habits with completion insights.</p>
+          </div>
+        </div>
+
+        <!-- Wide card: Workouts -->
+        <div class="bento__card bento__card--wide reveal-up" data-delay="0.2">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--red">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="bento__wide-layout">
+              <div>
+                <h3 class="bento__title">Workout Tracking & Health Scores</h3>
+                <p class="bento__desc">Log runs, lifts, yoga, and more. Get Recovery, Strain, and Energy scores powered by your HealthKit biometrics — like having a personal Whoop on your wrist.</p>
+              </div>
+              <div class="bento__health-scores">
+                <div class="bento__score">
+                  <div class="bento__score-ring" style="--progress: 82; --color: #4ADE80">
+                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="rgba(74,222,128,0.15)" stroke-width="4"/><circle cx="30" cy="30" r="25" fill="none" stroke="#4ADE80" stroke-width="4" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="28" transform="rotate(-90 30 30)"/></svg>
+                    <span>82</span>
+                  </div>
+                  <small>Recovery</small>
+                </div>
+                <div class="bento__score">
+                  <div class="bento__score-ring" style="--progress: 65; --color: #F97316">
+                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="rgba(249,115,22,0.15)" stroke-width="4"/><circle cx="30" cy="30" r="25" fill="none" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="55" transform="rotate(-90 30 30)"/></svg>
+                    <span>65</span>
+                  </div>
+                  <small>Strain</small>
+                </div>
+                <div class="bento__score">
+                  <div class="bento__score-ring" style="--progress: 91; --color: #818CF8">
+                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="rgba(129,140,248,0.15)" stroke-width="4"/><circle cx="30" cy="30" r="25" fill="none" stroke="#818CF8" stroke-width="4" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="14" transform="rotate(-90 30 30)"/></svg>
+                    <span>91</span>
+                  </div>
+                  <small>Sleep</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small card: Weight -->
+        <div class="bento__card bento__card--sm reveal-up" data-delay="0.3">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--yellow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+            </div>
+            <h3 class="bento__title">Weight Trends</h3>
+            <p class="bento__desc">Track weight with adaptive TDEE metabolism adjustments.</p>
+          </div>
+        </div>
+
+        <!-- Small card: Progress Photos -->
+        <div class="bento__card bento__card--sm reveal-up" data-delay="0.4">
+          <div class="bento__card-glow"></div>
+          <div class="bento__card-content">
+            <div class="bento__icon bento__icon--cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3 class="bento__title">Progress Photos</h3>
+            <p class="bento__desc">Before & after comparison to visualise your journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- AI INTELLIGENCE SECTION                         -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="ai" id="ai">
+    <div class="ai__bg">
+      <div class="ai__gradient-orb ai__gradient-orb--1"></div>
+      <div class="ai__gradient-orb ai__gradient-orb--2"></div>
+    </div>
+
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Apple Intelligence</span>
+        <h2 class="section-title reveal-up" data-delay="0.1">On-device AI.<br><span class="gradient-text">Zero compromise.</span></h2>
+        <p class="section-subtitle reveal-up" data-delay="0.2">CHAR harnesses Apple Foundation Models running entirely on your device. Your health data never leaves your iPhone — not even for AI.</p>
+      </div>
+
+      <div class="ai__grid">
+        <!-- AI Feature 1: Food Scanner -->
+        <div class="ai__card reveal-up" data-delay="0.1">
+          <div class="ai__card-visual">
+            <div class="ai__scan-animation">
+              <div class="ai__scan-frame">
+                <div class="ai__scan-corner ai__scan-corner--tl"></div>
+                <div class="ai__scan-corner ai__scan-corner--tr"></div>
+                <div class="ai__scan-corner ai__scan-corner--bl"></div>
+                <div class="ai__scan-corner ai__scan-corner--br"></div>
+                <div class="ai__scan-line"></div>
+              </div>
+              <div class="ai__scan-result">
+                <span class="ai__scan-food">🥗 Caesar Salad</span>
+                <span class="ai__scan-cal">~340 kcal</span>
+              </div>
+            </div>
+          </div>
+          <h3>AI Food Scanner</h3>
+          <p>Point your camera at any meal. On-device CoreML identifies food in real-time and estimates nutrition instantly.</p>
+        </div>
+
+        <!-- AI Feature 2: Voice Entry -->
+        <div class="ai__card reveal-up" data-delay="0.2">
+          <div class="ai__card-visual">
+            <div class="ai__voice-animation">
+              <div class="ai__waveform">
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+                <span style="--i:4"></span>
+                <span style="--i:5"></span>
+                <span style="--i:6"></span>
+                <span style="--i:7"></span>
+                <span style="--i:8"></span>
+                <span style="--i:9"></span>
+              </div>
+              <div class="ai__voice-text">"Two eggs with avocado toast and black coffee"</div>
+            </div>
+          </div>
+          <h3>Voice Meal Logging</h3>
+          <p>Describe what you ate naturally. Apple Intelligence parses your speech into structured nutrition data in seconds.</p>
+        </div>
+
+        <!-- AI Feature 3: Insights -->
+        <div class="ai__card reveal-up" data-delay="0.3">
+          <div class="ai__card-visual">
+            <div class="ai__insight-animation">
+              <div class="ai__insight-bubble">
+                <div class="ai__insight-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 3a3 3 0 1 1-3 3 3 3 0 0 1 3-3Zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-2 4-3.08 6-3.08s5.97 1.1 6 3.08a7.2 7.2 0 0 1-6 3.22Z"/></svg>
+                </div>
+                <div class="ai__insight-text">
+                  <span class="ai__typing-indicator">
+                    <span></span><span></span><span></span>
+                  </span>
+                  Your protein intake has been 15% below target this week. Try adding a greek yogurt snack to hit your goals.
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>AI Nutrition Coach</h3>
+          <p>Get personalised daily summaries, pattern analysis, and actionable tips from your on-device AI coach.</p>
+        </div>
+
+        <!-- AI Feature 4: NLP Tasks -->
+        <div class="ai__card reveal-up" data-delay="0.4">
+          <div class="ai__card-visual">
+            <div class="ai__nlp-animation">
+              <div class="ai__nlp-input">"Gym tomorrow 6am, 1 hour, high priority"</div>
+              <div class="ai__nlp-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+              </div>
+              <div class="ai__nlp-output">
+                <div class="ai__nlp-tag ai__nlp-tag--title">📋 Gym</div>
+                <div class="ai__nlp-tag ai__nlp-tag--time">⏰ 6:00 AM</div>
+                <div class="ai__nlp-tag ai__nlp-tag--duration">⏱ 1 hour</div>
+                <div class="ai__nlp-tag ai__nlp-tag--priority">🔴 High</div>
+              </div>
+            </div>
+          </div>
+          <h3>Voice Task Creation</h3>
+          <p>Speak tasks naturally. The NLP parser understands dates, times, durations, and priorities from your words.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- PHONE SHOWCASE (Scroll-driven)                  -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="showcase" id="showcase">
+    <div class="container">
+      <div class="showcase__layout">
+        <div class="showcase__phone-col">
+          <div class="showcase__phone-sticky">
+            <div class="showcase__phone">
+              <div class="showcase__phone-frame">
+                <div class="showcase__phone-notch"></div>
+                <div class="showcase__phone-screen" id="showcase-screen">
+                  <!-- Screens cycle via JS -->
+                  <div class="showcase__screen showcase__screen--active" data-screen="dashboard">
+                    <div class="mock-screen-content">
+                      <div class="mock-header-bar">
+                        <span class="mock-h-title">Progress</span>
+                      </div>
+                      <div class="mock-bento-grid">
+                        <div class="mock-bento-item mock-bento-item--lg" style="--bg: linear-gradient(135deg, rgba(255,158,102,0.2), rgba(255,107,53,0.1))">
+                          <span class="mock-bento-label">Recovery</span>
+                          <span class="mock-bento-value">85<small>%</small></span>
+                        </div>
+                        <div class="mock-bento-item" style="--bg: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(168,85,247,0.05))">
+                          <span class="mock-bento-label">Sleep</span>
+                          <span class="mock-bento-value">7.5h</span>
+                        </div>
+                        <div class="mock-bento-item" style="--bg: linear-gradient(135deg, rgba(74,222,128,0.2), rgba(74,222,128,0.05))">
+                          <span class="mock-bento-label">Steps</span>
+                          <span class="mock-bento-value">8,420</span>
+                        </div>
+                        <div class="mock-bento-item" style="--bg: linear-gradient(135deg, rgba(96,165,250,0.2), rgba(96,165,250,0.05))">
+                          <span class="mock-bento-label">HRV</span>
+                          <span class="mock-bento-value">52ms</span>
+                        </div>
+                        <div class="mock-bento-item" style="--bg: linear-gradient(135deg, rgba(244,114,182,0.2), rgba(244,114,182,0.05))">
+                          <span class="mock-bento-label">Stress</span>
+                          <span class="mock-bento-value">Low</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="showcase__screen" data-screen="planner">
+                    <div class="mock-screen-content">
+                      <div class="mock-header-bar">
+                        <span class="mock-h-title">Planner</span>
+                      </div>
+                      <div class="mock-planner">
+                        <div class="mock-date-strip">
+                          <span>Mon</span><span>Tue</span><span class="mock-date-active">Wed</span><span>Thu</span><span>Fri</span>
+                        </div>
+                        <div class="mock-planner-tasks">
+                          <div class="mock-p-task mock-p-done"><span>✓</span> Morning run — 6:00 AM</div>
+                          <div class="mock-p-task mock-p-done"><span>✓</span> Team standup — 9:30 AM</div>
+                          <div class="mock-p-task mock-p-current"><span>●</span> Deep focus: Project X — 2:00 PM</div>
+                          <div class="mock-p-task"><span>○</span> Meal prep — 5:00 PM</div>
+                          <div class="mock-p-task"><span>○</span> Read 30 min — 9:00 PM</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="showcase__screen" data-screen="fasting">
+                    <div class="mock-screen-content">
+                      <div class="mock-header-bar">
+                        <span class="mock-h-title">Fasting</span>
+                      </div>
+                      <div class="mock-fasting">
+                        <div class="mock-fasting-ring">
+                          <svg viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="60" fill="none" stroke="rgba(168,85,247,0.1)" stroke-width="8"/>
+                            <circle cx="70" cy="70" r="60" fill="none" stroke="url(#fast-ring)" stroke-width="8" stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="94" transform="rotate(-90 70 70)"/>
+                            <defs><linearGradient id="fast-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs>
+                          </svg>
+                          <div class="mock-fasting-center">
+                            <span class="mock-fasting-time">14:23</span>
+                            <span class="mock-fasting-label">of 16:00</span>
+                          </div>
+                        </div>
+                        <div class="mock-fasting-status">
+                          <span class="mock-fasting-badge">🔥 Fat Burning Zone</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase__text-col">
+          <div class="showcase__item" data-target="dashboard">
+            <div class="showcase__item-content reveal-right">
+              <span class="showcase__item-tag">Progress Dashboard</span>
+              <h3>Your health at a glance</h3>
+              <p>A customisable bento grid with 18+ card types. Drag, reorder, add, or remove — build the dashboard that works for you. Recovery scores, sleep quality, HRV trends, activity rings, and more.</p>
+              <ul class="showcase__checklist">
+                <li>18+ customisable metric cards</li>
+                <li>Recovery, Strain & Sleep scores</li>
+                <li>Weekly AI-generated reports</li>
+              </ul>
+            </div>
+          </div>
+          <div class="showcase__item" data-target="planner">
+            <div class="showcase__item-content reveal-right">
+              <span class="showcase__item-tag">Smart Planner</span>
+              <h3>Plan your day, your way</h3>
+              <p>A full-featured task manager with voice input, NLP parsing, routines, priorities, and calendar integration. See your Apple Calendar events alongside your tasks.</p>
+              <ul class="showcase__checklist">
+                <li>Voice & NLP task creation</li>
+                <li>Pre-built routines & templates</li>
+                <li>Apple Calendar integration</li>
+              </ul>
+            </div>
+          </div>
+          <div class="showcase__item" data-target="fasting">
+            <div class="showcase__item-content reveal-right">
+              <span class="showcase__item-tag">Fasting Timer</span>
+              <h3>Fast smarter, not harder</h3>
+              <p>Choose from 6 protocols or create your own. A beautiful progress ring with live elapsed time, right on your Lock Screen and Dynamic Island.</p>
+              <ul class="showcase__checklist">
+                <li>6 protocols including OMAD</li>
+                <li>Live Activity on Dynamic Island</li>
+                <li>Session history & statistics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- APPLE ECOSYSTEM                                 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="ecosystem" id="ecosystem">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Ecosystem</span>
+        <h2 class="section-title reveal-up" data-delay="0.1">Deeply integrated with<br><span class="gradient-text">Apple's ecosystem.</span></h2>
+        <p class="section-subtitle reveal-up" data-delay="0.2">CHAR isn't just an app — it's a native citizen of iOS 26, designed to work seamlessly with the tools you already use.</p>
+      </div>
+
+      <div class="ecosystem__grid">
+        <div class="ecosystem__card reveal-up" data-delay="0.1">
+          <div class="ecosystem__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF375F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Apple Health</h3>
+          <p>Deep bidirectional sync. Read steps, heart rate, HRV, sleep, and workouts. Write nutrition, water, and body mass back.</p>
+        </div>
+
+        <div class="ecosystem__card reveal-up" data-delay="0.15">
+          <div class="ecosystem__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BF5AF2" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="3"/><circle cx="12" cy="12" r="4"/><path d="M8 18V6M16 18V6"/></svg>
+          </div>
+          <h3>Dynamic Island</h3>
+          <p>4 Live Activities: fasting timer, calorie budget, planner progress, and focus sessions — always visible.</p>
+        </div>
+
+        <div class="ecosystem__card reveal-up" data-delay="0.2">
+          <div class="ecosystem__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#30D158" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          </div>
+          <h3>Home & Lock Screen Widgets</h3>
+          <p>5 widget types in every size. Calories, macros, planner tasks, and full progress — at a glance.</p>
+        </div>
+
+        <div class="ecosystem__card reveal-up" data-delay="0.25">
+          <div class="ecosystem__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A84FF" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M8.5 2.5C5 4 2 7.5 2 12s3 8 6.5 9.5M15.5 2.5C19 4 22 7.5 22 12s-3 8-6.5 9.5"/></svg>
+          </div>
+          <h3>Siri Shortcuts</h3>
+          <p>10+ voice commands. "Log a meal", "Start a fast", "What's my plan for today" — all hands-free.</p>
+        </div>
+
+        <div class="ecosystem__card reveal-up" data-delay="0.3">
+          <div class="ecosystem__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9F0A" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Liquid Glass Design</h3>
+          <p>Built natively for iOS 26 with frosted glass effects, mesh gradients, and symbol animations.</p>
+        </div>
+
+        <div class="ecosystem__card reveal-up" data-delay="0.35">
+          <div class="ecosystem__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64D2FF" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>iCloud Sync</h3>
+          <p>Your data follows you across devices. Seamless CloudKit sync via your personal iCloud account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- PRIVACY SECTION                                 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="privacy" id="privacy">
+    <div class="privacy__bg">
+      <div class="privacy__shield-bg"></div>
+    </div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Privacy</span>
+        <h2 class="section-title reveal-up" data-delay="0.1">Your data stays<br><span class="gradient-text">on your device.</span></h2>
+        <p class="section-subtitle reveal-up" data-delay="0.2">No cloud AI. No tracking. No analytics. No ads. CHAR is built on a simple principle: your health data belongs to you.</p>
+      </div>
+
+      <div class="privacy__visual reveal-scale">
+        <div class="privacy__shield">
+          <svg class="privacy__shield-icon" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 5L10 30V65C10 98 32 128 60 135C88 128 110 98 110 65V30L60 5Z" fill="url(#shield-fill)" stroke="url(#shield-stroke)" stroke-width="2"/>
+            <path d="M45 70L55 80L78 57" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="shield-fill" x1="60" y1="5" x2="60" y2="135"><stop stop-color="rgba(255,158,102,0.15)"/><stop offset="1" stop-color="rgba(255,107,53,0.05)"/></linearGradient>
+              <linearGradient id="shield-stroke" x1="60" y1="5" x2="60" y2="135"><stop stop-color="#FF9E66"/><stop offset="1" stop-color="#FF6B35"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <div class="privacy__grid">
+        <div class="privacy__item reveal-up" data-delay="0.1">
+          <div class="privacy__item-icon">🧠</div>
+          <h4>100% On-Device AI</h4>
+          <p>Apple Foundation Models and CoreML run entirely on your iPhone. Zero cloud API calls for AI features.</p>
+        </div>
+        <div class="privacy__item reveal-up" data-delay="0.15">
+          <div class="privacy__item-icon">🚫</div>
+          <h4>No Tracking SDKs</h4>
+          <p>No analytics services. No advertising identifiers. No behaviour monitoring. Zero third-party trackers.</p>
+        </div>
+        <div class="privacy__item reveal-up" data-delay="0.2">
+          <div class="privacy__item-icon">📱</div>
+          <h4>Local-First Storage</h4>
+          <p>All data lives in Core Data on your device. iCloud sync uses your personal account — we never see it.</p>
+        </div>
+        <div class="privacy__item reveal-up" data-delay="0.25">
+          <div class="privacy__item-icon">🔒</div>
+          <h4>Apple Health Compliant</h4>
+          <p>HealthKit data is governed by Apple's strict guidelines. It's never used for advertising or shared with third parties.</p>
+        </div>
+      </div>
+
+      <div class="privacy__cta reveal-up" data-delay="0.3">
+        <a href="https://www.liftzoneworkouts.com/Char-privacy" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--md">
+          Read Full Privacy Policy
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- PRICING SECTION                                 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Pricing</span>
+        <h2 class="section-title reveal-up" data-delay="0.1">Start free.<br><span class="gradient-text">Upgrade when ready.</span></h2>
+        <p class="section-subtitle reveal-up" data-delay="0.2">CHAR is packed with features for free. Premium unlocks AI-powered superpowers with a 14-day free trial.</p>
+      </div>
+
+      <div class="pricing__grid">
+        <!-- Free Tier -->
+        <div class="pricing__card reveal-up" data-delay="0.1">
+          <div class="pricing__card-header">
+            <h3 class="pricing__plan-name">Free</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount">$0</span>
+              <span class="pricing__period">forever</span>
+            </div>
+          </div>
+          <ul class="pricing__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Full nutrition tracking</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Barcode & manual entry</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Intermittent fasting timer</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Workout logging</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Planner & focus timer</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Mood & habit tracking</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Apple Health sync</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Widgets & Live Activities</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Siri Shortcuts</li>
+          </ul>
+          <a href="#download" class="btn btn--ghost btn--lg pricing__cta">Get Started Free</a>
+        </div>
+
+        <!-- Premium Tier -->
+        <div class="pricing__card pricing__card--premium reveal-up" data-delay="0.2">
+          <div class="pricing__badge">Most Popular</div>
+          <div class="pricing__card-header">
+            <h3 class="pricing__plan-name">Premium</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount">$4.99</span>
+              <span class="pricing__period">/month</span>
+            </div>
+            <span class="pricing__trial">14-day free trial</span>
+          </div>
+          <ul class="pricing__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E66" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Everything in Free</li>
+            <li class="pricing__feature--highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E66" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <strong>AI Food Scanner</strong></li>
+            <li class="pricing__feature--highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E66" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <strong>Voice Meal Entry</strong></li>
+            <li class="pricing__feature--highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E66" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <strong>AI Nutrition Coach</strong></li>
+            <li class="pricing__feature--highlight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E66" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <strong>AI Insights & Summaries</strong></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E66" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Priority future features</li>
+          </ul>
+          <a href="#download" class="btn btn--primary btn--lg pricing__cta">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FAQ SECTION                                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">FAQ</span>
+        <h2 class="section-title reveal-up" data-delay="0.1">Questions?<br><span class="gradient-text">We've got answers.</span></h2>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq__item reveal-up" data-delay="0.1">
+          <button class="faq__question" aria-expanded="false">
+            <span>Is my data really private?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Absolutely. CHAR stores all data locally on your device using Core Data. AI features run entirely on-device via Apple Foundation Models and CoreML — no data is ever sent to any cloud service for processing. There are zero tracking SDKs, zero analytics, and zero advertising in the app.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal-up" data-delay="0.15">
+          <button class="faq__question" aria-expanded="false">
+            <span>Which iPhones support the AI features?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>AI features powered by Apple Foundation Models require iPhone 16 or later with iOS 26. The food scanner (CoreML) works on any iPhone running iOS 26. On older devices, CHAR falls back to rule-based insights that still provide valuable health analysis.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal-up" data-delay="0.2">
+          <button class="faq__question" aria-expanded="false">
+            <span>What's included in the free version?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>The free version includes full nutrition tracking (barcode + manual entry), intermittent fasting with all 6 protocols, workout logging, the complete planner with focus timer, mood tracking, habit building, Apple Health sync, widgets, Live Activities, Siri shortcuts, and the customisable progress dashboard. Premium adds AI camera scanning, voice entry, AI coaching, and AI insights.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal-up" data-delay="0.25">
+          <button class="faq__question" aria-expanded="false">
+            <span>How does the food database work?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>CHAR uses a combination of the USDA FoodData Central database, Open Food Facts barcode database, and a built-in offline restaurant menu database. You can also create custom foods and save favourite meals for quick re-logging.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal-up" data-delay="0.3">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can I sync data across devices?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Yes. With iCloud enabled, your data automatically syncs across all your Apple devices via CloudKit. It's stored in your personal iCloud account — we never have access to it.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal-up" data-delay="0.35">
+          <button class="faq__question" aria-expanded="false">
+            <span>What makes CHAR different from MyFitnessPal or Lose It?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>CHAR is an all-in-one app that combines nutrition tracking, fasting, workouts, planner, focus timer, mood, habits, and progress photos — with on-device AI intelligence and zero privacy compromise. There are no ads, no social features harvesting your data, and the AI runs 100% on your device. Plus, it's designed natively for iOS 26 with Liquid Glass aesthetics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FINAL CTA / DOWNLOAD                           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="download" id="download">
+    <div class="download__bg">
+      <div class="download__gradient-orb download__gradient-orb--1"></div>
+      <div class="download__gradient-orb download__gradient-orb--2"></div>
+    </div>
+    <div class="container">
+      <div class="download__content">
+        <h2 class="download__title reveal-up">
+          Ready to take control of<br>your health <span class="gradient-text">intelligently</span>?
+        </h2>
+        <p class="download__subtitle reveal-up" data-delay="0.1">
+          Join thousands tracking smarter with CHAR. Free to start, no credit card required.
+        </p>
+        <div class="download__actions reveal-up" data-delay="0.2">
+          <a href="#" class="download__app-store" aria-label="Download on the App Store">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="40" rx="6" fill="#000"/>
+              <text x="42" y="14" fill="#fff" font-size="7" font-family="Inter, sans-serif">Download on the</text>
+              <text x="42" y="28" fill="#fff" font-size="14" font-weight="600" font-family="Inter, sans-serif">App Store</text>
+              <g transform="translate(12, 7) scale(0.65)" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></g>
+            </svg>
+          </a>
+        </div>
+        <p class="download__note reveal-up" data-delay="0.3">Requires iOS 26 · iPhone 12 or later</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FOOTER                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">
+            <svg class="footer__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="10" fill="url(#footer-grad)"/>
+              <path d="M12 20C12 15.582 15.582 12 20 12C24.418 12 28 15.582 28 20" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M15 20C15 17.239 17.239 15 20 15C22.761 15 25 17.239 25 20C25 22.761 22.761 25 20 25" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+              <circle cx="20" cy="20" r="2.5" fill="white"/>
+              <defs>
+                <linearGradient id="footer-grad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#FF9E66"/><stop offset="1" stop-color="#FF6B35"/></linearGradient>
+              </defs>
+            </svg>
+            <span>CHAR</span>
+          </a>
+          <p class="footer__tagline">AI-powered health & productivity companion.<br>Built with privacy at its core.</p>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#ai">Intelligence</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer__col">
+            <h4>Legal</h4>
+            <a href="https://www.liftzoneworkouts.com/Char-privacy" target="_blank" rel="noopener">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer__col">
+            <h4>Contact</h4>
+            <a href="mailto:Char@liftzoneworkouts.com">Char@liftzoneworkouts.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Evo Solutions. All rights reserved.</p>
+        <p class="footer__made">Designed for iOS 26 with ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SCRIPTS                                         -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

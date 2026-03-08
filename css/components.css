@@ -1,0 +1,545 @@
+/* ═══════════════════════════════════════════════════
+   COMPONENTS — Reusable UI Elements
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Loader ─── */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s var(--ease-out-expo), visibility 0.6s;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.loader__logo {
+  animation: loaderPulse 2s ease-in-out infinite;
+}
+
+.loader__icon {
+  width: 64px;
+  height: 64px;
+}
+
+.loader__progress {
+  width: 120px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.loader__bar {
+  width: 0%;
+  height: 100%;
+  background: var(--gradient-brand);
+  border-radius: var(--radius-full);
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+@keyframes loaderPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+/* ─── Navigation ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  padding: var(--space-4) 0;
+  transition: all var(--duration-base) var(--ease-in-out);
+}
+
+.nav--scrolled {
+  padding: var(--space-3) 0;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.nav__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 800;
+  font-size: var(--text-xl);
+  letter-spacing: var(--tracking-tight);
+  z-index: var(--z-overlay);
+}
+
+.nav__logo-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.nav__link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--duration-fast) var(--ease-in-out);
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-base) var(--ease-out-expo);
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: var(--z-overlay);
+}
+
+/* Mobile Menu Button */
+.nav__menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+  padding: 2px 0;
+}
+
+.nav__menu-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-base) var(--ease-out-expo);
+  transform-origin: center;
+}
+
+.nav__menu-btn--active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__menu-btn--active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__menu-btn--active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--duration-slow) var(--ease-out-expo);
+}
+
+.mobile-menu--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  transform: translateY(20px);
+  transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.mobile-menu--open .mobile-menu__content {
+  transform: translateY(0);
+}
+
+.mobile-menu__link {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: color var(--duration-fast);
+}
+
+.mobile-menu__link:hover {
+  color: var(--text-primary);
+}
+
+.mobile-menu__cta {
+  margin-top: var(--space-8);
+}
+
+/* ─── Phone Mockup (shared) ─── */
+.hero__phone, .showcase__phone {
+  position: relative;
+}
+
+.hero__phone-frame, .showcase__phone-frame {
+  position: relative;
+  width: 280px;
+  height: 580px;
+  background: #1a1a22;
+  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero__phone-notch, .showcase__phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: #1a1a22;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+.hero__phone-screen, .showcase__phone-screen {
+  position: absolute;
+  inset: 0;
+  border-radius: 38px;
+  overflow: hidden;
+  background: #0d0d14;
+}
+
+/* ─── Mock App Content ─── */
+.hero__phone-content, .mock-screen-content {
+  padding: 40px 16px 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-primary);
+}
+
+.mock-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.mock-status-icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.mock-signal, .mock-wifi, .mock-battery {
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1px;
+}
+
+.mock-signal { width: 14px; height: 8px; border-radius: 2px; }
+.mock-wifi { width: 12px; height: 8px; border-radius: 50%; }
+.mock-battery { width: 18px; height: 9px; border-radius: 2px; }
+
+.mock-app-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mock-greeting {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  align-self: flex-start;
+}
+
+.mock-calorie-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.mock-calorie-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mock-calorie-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-calorie-number {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--orange-400);
+}
+
+.mock-calorie-unit {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mock-macros {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mock-macro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.mock-macro-bar {
+  height: 4px;
+  width: var(--w);
+  background: var(--c);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.mock-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+  padding-bottom: 8px;
+}
+
+.mock-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mock-card-icon { font-size: 16px; }
+.mock-card-label { font-size: 8px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+.mock-card-value { font-size: 12px; font-weight: 700; color: var(--text-primary); }
+
+/* ─── Showcase Mock Screens ─── */
+.mock-header-bar {
+  margin-bottom: 16px;
+}
+
+.mock-h-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.mock-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.mock-bento-item {
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mock-bento-item--lg {
+  grid-column: span 2;
+}
+
+.mock-bento-label {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mock-bento-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.mock-bento-value small {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Planner Mock */
+.mock-planner { display: flex; flex-direction: column; gap: 16px; }
+
+.mock-date-strip {
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.mock-date-active {
+  color: var(--orange-400);
+  position: relative;
+}
+
+.mock-date-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--orange-400);
+}
+
+.mock-planner-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mock-p-task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.mock-p-task span {
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.mock-p-done { color: var(--text-tertiary); }
+.mock-p-done span { color: var(--green-400); }
+.mock-p-current { border-color: rgba(255, 158, 102, 0.2); background: rgba(255, 158, 102, 0.05); }
+.mock-p-current span { color: var(--orange-400); }
+
+/* Fasting Mock */
+.mock-fasting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.mock-fasting-ring {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.mock-fasting-ring svg { width: 100%; height: 100%; }
+
+.mock-fasting-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-fasting-time {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.mock-fasting-label {
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.mock-fasting-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--purple-400);
+  padding: 6px 14px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: var(--radius-full);
+}
