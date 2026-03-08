@@ -260,6 +260,17 @@
   background: #0d0d14;
 }
 
+/* ─── Phone Screenshot Images ─── */
+.phone-screenshot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 38px;
+}
+
 /* ─── Mock App Content ─── */
 .hero__phone-content, .mock-screen-content {
   padding: 40px 16px 16px;
