@@ -39,9 +39,8 @@
     justify-content: center;
   }
 
-  .hero__phone-frame {
-    width: 240px;
-    height: 500px;
+  .hero__device-wrapper {
+    max-width: 240px;
   }
 
   /* Bento Grid */
@@ -101,16 +100,8 @@
     font-size: clamp(var(--text-4xl), 8vw, var(--text-5xl));
   }
 
-  .hero__phone-frame {
-    width: 220px;
-    height: 460px;
-    border-radius: 34px;
-  }
-
-  .hero__phone-notch {
-    width: 100px;
-    height: 24px;
-    border-radius: 0 0 16px 16px;
+  .hero__device-wrapper {
+    max-width: 220px;
   }
 
   .hero__scroll-indicator {
@@ -238,10 +229,8 @@
     font-size: var(--text-4xl);
   }
 
-  .hero__phone-frame {
-    width: 200px;
-    height: 420px;
-    border-radius: 30px;
+  .hero__device-wrapper {
+    max-width: 200px;
   }
 
   .hero__actions {
@@ -264,8 +253,7 @@
 
 /* ─── Large Desktop (≥1400px) ─── */
 @media (min-width: 1400px) {
-  .hero__phone-frame {
-    width: 300px;
-    height: 620px;
+  .hero__device-wrapper {
+    max-width: 340px;
   }
 }

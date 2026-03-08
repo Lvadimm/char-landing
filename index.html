@@ -185,15 +185,8 @@
       </div>
 
       <div class="hero__visual reveal-scale">
-        <div class="hero__phone-wrapper">
-          <div class="hero__phone">
-            <div class="hero__phone-frame">
-              <div class="hero__phone-notch"></div>
-              <div class="hero__phone-screen">
-                <img src="assets/images/hero-dashboard.png" alt="CHAR app dashboard showing calorie tracking, macros, and health metrics" class="phone-screenshot" loading="eager">
-              </div>
-            </div>
-          </div>
+        <div class="hero__device-wrapper">
+          <img src="assets/images/hero-dashboard.png" alt="CHAR app dashboard showing calorie tracking, macros, and health metrics" class="hero__device-img" loading="eager">
           <div class="hero__phone-glow"></div>
         </div>
       </div>
@@ -564,54 +557,49 @@
       <div class="showcase__layout">
         <div class="showcase__phone-col">
           <div class="showcase__phone-sticky">
-            <div class="showcase__phone">
-              <div class="showcase__phone-frame">
-                <div class="showcase__phone-notch"></div>
-                <div class="showcase__phone-screen" id="showcase-screen">
-                  <!-- Screens cycle via JS -->
-                  <div class="showcase__screen showcase__screen--active" data-screen="dashboard">
-                    <img src="assets/images/screen-dashboard.png" alt="CHAR progress dashboard with recovery, sleep, steps, and HRV metrics" class="phone-screenshot" loading="lazy">
+            <div class="showcase__device" id="showcase-screen">
+              <!-- Screens cycle via JS -->
+              <div class="showcase__screen showcase__screen--active" data-screen="dashboard">
+                <img src="assets/images/screen-dashboard.png" alt="CHAR progress dashboard with recovery, sleep, steps, and HRV metrics" class="showcase__device-img" loading="lazy">
+              </div>
+              <div class="showcase__screen" data-screen="planner">
+                <div class="mock-screen-content">
+                  <div class="mock-header-bar">
+                    <span class="mock-h-title">Planner</span>
                   </div>
-                  <div class="showcase__screen" data-screen="planner">
-                    <div class="mock-screen-content">
-                      <div class="mock-header-bar">
-                        <span class="mock-h-title">Planner</span>
-                      </div>
-                      <div class="mock-planner">
-                        <div class="mock-date-strip">
-                          <span>Mon</span><span>Tue</span><span class="mock-date-active">Wed</span><span>Thu</span><span>Fri</span>
-                        </div>
-                        <div class="mock-planner-tasks">
-                          <div class="mock-p-task mock-p-done"><span>✓</span> Morning run — 6:00 AM</div>
-                          <div class="mock-p-task mock-p-done"><span>✓</span> Team standup — 9:30 AM</div>
-                          <div class="mock-p-task mock-p-current"><span>●</span> Deep focus: Project X — 2:00 PM</div>
-                          <div class="mock-p-task"><span>○</span> Meal prep — 5:00 PM</div>
-                          <div class="mock-p-task"><span>○</span> Read 30 min — 9:00 PM</div>
-                        </div>
-                      </div>
+                  <div class="mock-planner">
+                    <div class="mock-date-strip">
+                      <span>Mon</span><span>Tue</span><span class="mock-date-active">Wed</span><span>Thu</span><span>Fri</span>
+                    </div>
+                    <div class="mock-planner-tasks">
+                      <div class="mock-p-task mock-p-done"><span>✓</span> Morning run — 6:00 AM</div>
+                      <div class="mock-p-task mock-p-done"><span>✓</span> Team standup — 9:30 AM</div>
+                      <div class="mock-p-task mock-p-current"><span>●</span> Deep focus: Project X — 2:00 PM</div>
+                      <div class="mock-p-task"><span>○</span> Meal prep — 5:00 PM</div>
+                      <div class="mock-p-task"><span>○</span> Read 30 min — 9:00 PM</div>
                     </div>
                   </div>
-                  <div class="showcase__screen" data-screen="fasting">
-                    <div class="mock-screen-content">
-                      <div class="mock-header-bar">
-                        <span class="mock-h-title">Fasting</span>
+                </div>
+              </div>
+              <div class="showcase__screen" data-screen="fasting">
+                <div class="mock-screen-content">
+                  <div class="mock-header-bar">
+                    <span class="mock-h-title">Fasting</span>
+                  </div>
+                  <div class="mock-fasting">
+                    <div class="mock-fasting-ring">
+                      <svg viewBox="0 0 140 140">
+                        <circle cx="70" cy="70" r="60" fill="none" stroke="rgba(168,85,247,0.1)" stroke-width="8"/>
+                        <circle cx="70" cy="70" r="60" fill="none" stroke="url(#fast-ring)" stroke-width="8" stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="94" transform="rotate(-90 70 70)"/>
+                        <defs><linearGradient id="fast-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs>
+                      </svg>
+                      <div class="mock-fasting-center">
+                        <span class="mock-fasting-time">14:23</span>
+                        <span class="mock-fasting-label">of 16:00</span>
                       </div>
-                      <div class="mock-fasting">
-                        <div class="mock-fasting-ring">
-                          <svg viewBox="0 0 140 140">
-                            <circle cx="70" cy="70" r="60" fill="none" stroke="rgba(168,85,247,0.1)" stroke-width="8"/>
-                            <circle cx="70" cy="70" r="60" fill="none" stroke="url(#fast-ring)" stroke-width="8" stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="94" transform="rotate(-90 70 70)"/>
-                            <defs><linearGradient id="fast-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs>
-                          </svg>
-                          <div class="mock-fasting-center">
-                            <span class="mock-fasting-time">14:23</span>
-                            <span class="mock-fasting-label">of 16:00</span>
-                          </div>
-                        </div>
-                        <div class="mock-fasting-status">
-                          <span class="mock-fasting-badge">🔥 Fat Burning Zone</span>
-                        </div>
-                      </div>
+                    </div>
+                    <div class="mock-fasting-status">
+                      <span class="mock-fasting-badge">🔥 Fat Burning Zone</span>
                     </div>
                   </div>
                 </div>
