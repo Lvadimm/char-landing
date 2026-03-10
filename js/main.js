@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevealAnimations();
   initCounterAnimations();
   initBentoCardGlow();
-  initShowcaseScroll();
   initFAQ();
   initCursorGlow();
   initMarqueeSpeed();
@@ -329,48 +328,6 @@ function initBentoCardGlow() {
       card.style.setProperty('--mouse-x', `${x}px`);
       card.style.setProperty('--mouse-y', `${y}px`);
     });
-  });
-}
-
-/* ═══════════════════════════════════════════════════
-   SHOWCASE SCROLL (Phone screen switching)
-   ═══════════════════════════════════════════════════ */
-function initShowcaseScroll() {
-  const items = document.querySelectorAll('.showcase__item');
-  const screens = document.querySelectorAll('.showcase__screen');
-  
-  if (!items.length || !screens.length) return;
-
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    items.forEach(item => {
-      const targetScreen = item.dataset.target;
-      
-      ScrollTrigger.create({
-        trigger: item,
-        start: 'top center',
-        end: 'bottom center',
-        onEnter: () => switchScreen(targetScreen),
-        onEnterBack: () => switchScreen(targetScreen),
-      });
-    });
-  } else {
-    // Fallback with IntersectionObserver
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          switchScreen(entry.target.dataset.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    items.forEach(item => observer.observe(item));
-  }
-}
-
-function switchScreen(targetName) {
-  const screens = document.querySelectorAll('.showcase__screen');
-  screens.forEach(screen => {
-    screen.classList.toggle('showcase__screen--active', screen.dataset.screen === targetName);
   });
 }
 

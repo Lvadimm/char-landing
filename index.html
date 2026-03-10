@@ -495,66 +495,59 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════ -->
-  <!-- PHONE SHOWCASE (Scroll-driven)                  -->
+  <!-- PHONE SHOWCASE (Alternating rows)               -->
   <!-- ═══════════════════════════════════════════════ -->
   <section class="showcase" id="showcase">
     <div class="container">
-      <div class="showcase__layout">
-        <div class="showcase__phone-col">
-          <div class="showcase__phone-sticky">
-            <div class="showcase__device" id="showcase-screen">
-              <!-- Invisible sizer sets container height -->
-              <img src="assets/images/screen-progress.png?v=2" alt="" class="showcase__device-sizer" aria-hidden="true" loading="eager">
-              <!-- Screens cycle via JS -->
-              <div class="showcase__screen showcase__screen--active" data-screen="progress">
-                <img src="assets/images/screen-progress.png?v=2" alt="CHAR progress dashboard with recovery, sleep, steps, and HRV metrics" class="showcase__device-img" loading="eager">
-              </div>
-              <div class="showcase__screen" data-screen="planner">
-                <img src="assets/images/screen-planner.png?v=2" alt="CHAR smart planner with tasks, priorities, and calendar integration" class="showcase__device-img" loading="eager">
-              </div>
-              <div class="showcase__screen" data-screen="fasting">
-                <img src="assets/images/screen-fasting.png?v=2" alt="CHAR fasting timer with progress ring and protocol selection" class="showcase__device-img" loading="eager">
-              </div>
-            </div>
+      <div class="showcase__features">
+        <!-- Feature 1: Progress Dashboard -->
+        <div class="showcase__feature reveal-up" data-delay="0.1">
+          <div class="showcase__feature-phone">
+            <img src="assets/images/screen-progress.png?v=2" alt="CHAR progress dashboard with recovery, sleep, steps, and HRV metrics" class="showcase__feature-img" loading="lazy">
+          </div>
+          <div class="showcase__feature-text">
+            <span class="showcase__feature-badge">Progress Dashboard</span>
+            <h3>Your health at a glance</h3>
+            <p>A customisable bento grid with 18+ card types. Drag, reorder, add, or remove — build the dashboard that works for you. Track weight, sleep, heart rate, streaks, achievements, and more.</p>
+            <ul class="showcase__feature-list">
+              <li>18+ customisable health cards</li>
+              <li>Recovery, Strain &amp; Sleep scores</li>
+              <li>Weekly progress reports</li>
+            </ul>
           </div>
         </div>
 
-        <div class="showcase__text-col">
-          <div class="showcase__item" data-target="progress">
-            <div class="showcase__item-content reveal-right">
-              <span class="showcase__item-tag">Progress Dashboard</span>
-              <h3>Your health at a glance</h3>
-              <p>A customisable bento grid with 18+ card types. Drag, reorder, add, or remove — build the dashboard that works for you. Track weight, sleep, heart rate, streaks, achievements, and more.</p>
-              <ul class="showcase__checklist">
-                <li>18+ customisable health cards</li>
-                <li>Recovery, Strain &amp; Sleep scores</li>
-                <li>Weekly progress reports</li>
-              </ul>
-            </div>
+        <!-- Feature 2: Smart Planner (reversed) -->
+        <div class="showcase__feature showcase__feature--reverse reveal-up" data-delay="0.1">
+          <div class="showcase__feature-phone">
+            <img src="assets/images/screen-planner.png?v=2" alt="CHAR smart planner with tasks, priorities, and calendar integration" class="showcase__feature-img" loading="lazy">
           </div>
-          <div class="showcase__item" data-target="planner">
-            <div class="showcase__item-content reveal-right">
-              <span class="showcase__item-tag">Smart Planner</span>
-              <h3>Plan your day, your way</h3>
-              <p>A full task manager with voice input, routines, priorities, focus timer, and calendar integration. See your Apple Calendar events right alongside your tasks.</p>
-              <ul class="showcase__checklist">
-                <li>Voice and text task creation</li>
-                <li>Routines for morning, evening &amp; more</li>
-                <li>Apple Calendar integration</li>
-              </ul>
-            </div>
+          <div class="showcase__feature-text">
+            <span class="showcase__feature-badge">Smart Planner</span>
+            <h3>Plan your day, your way</h3>
+            <p>A full task manager with voice input, routines, priorities, focus timer, and calendar integration. See your Apple Calendar events right alongside your tasks.</p>
+            <ul class="showcase__feature-list">
+              <li>Voice and text task creation</li>
+              <li>Routines for morning, evening &amp; more</li>
+              <li>Apple Calendar integration</li>
+            </ul>
           </div>
-          <div class="showcase__item" data-target="fasting">
-            <div class="showcase__item-content reveal-right">
-              <span class="showcase__item-tag">Fasting Timer</span>
-              <h3>Fast smarter, not harder</h3>
-              <p>Choose from 6 protocols or create your own. A beautiful progress ring with live elapsed time, right on your Lock Screen and Dynamic Island.</p>
-              <ul class="showcase__checklist">
-                <li>6 protocols including OMAD</li>
-                <li>Live Activity on Dynamic Island</li>
-                <li>Session history & statistics</li>
-              </ul>
-            </div>
+        </div>
+
+        <!-- Feature 3: Fasting Timer -->
+        <div class="showcase__feature reveal-up" data-delay="0.1">
+          <div class="showcase__feature-phone">
+            <img src="assets/images/screen-fasting.png?v=2" alt="CHAR fasting timer with progress ring and protocol selection" class="showcase__feature-img" loading="lazy">
+          </div>
+          <div class="showcase__feature-text">
+            <span class="showcase__feature-badge">Fasting Timer</span>
+            <h3>Fast smarter, not harder</h3>
+            <p>Choose from 6 protocols or create your own. A beautiful progress ring with live elapsed time, right on your Lock Screen and Dynamic Island.</p>
+            <ul class="showcase__feature-list">
+              <li>6 protocols including OMAD</li>
+              <li>Live Activity on Dynamic Island</li>
+              <li>Session history &amp; statistics</li>
+            </ul>
           </div>
         </div>
       </div>
