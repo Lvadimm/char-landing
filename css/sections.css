@@ -573,13 +573,15 @@
 }
 
 .ai__feature-phone {
-  width: 220px;
+  width: 240px;
   flex-shrink: 0;
 }
 
 .ai__feature-img {
   width: 100%;
   height: auto;
+  max-height: 520px;
+  object-fit: contain;
   display: block;
   filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(128, 209, 186, 0.06));
 }
@@ -674,33 +676,27 @@
   justify-content: center;
 }
 
-/* Container sized by aspect-ratio matching the Figma mockups (964:1993) */
+/* Phone container — fixed width, images flow naturally like hero */
 .showcase__device {
   position: relative;
   width: 240px;
-  aspect-ratio: 964 / 1993;
 }
 
-/* All screens are absolutely positioned inside the aspect-ratio container */
+/* Screens stacked, only the active one is visible */
 .showcase__screen {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.6s var(--ease-out-expo);
+  display: none;
+  animation: fadeIn 0.4s ease-out;
 }
 
 .showcase__screen--active {
-  opacity: 1;
+  display: block;
 }
 
-/* Images fill the screen slot exactly */
+/* Images sized like hero: fill wrapper width, auto height */
 .showcase__device-img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: contain;
   filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(128, 209, 186, 0.06));
 }
 
