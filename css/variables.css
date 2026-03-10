@@ -4,14 +4,14 @@
 
 :root {
   /* ─── Brand Colors ─── */
-  --orange-50:  #FFF7ED;
-  --orange-100: #FFEDD5;
-  --orange-200: #FED7AA;
-  --orange-300: #FDBA74;
-  --orange-400: #FF9E66;
-  --orange-500: #FF6B35;
-  --orange-600: #EA580C;
-  --orange-700: #C2410C;
+  --mint-50:  #ECFDF5;
+  --mint-100: #D1FAE5;
+  --mint-200: #A7F3D0;
+  --mint-300: #80D1BA;
+  --mint-400: #5EBBAB;
+  --mint-500: #3D9B8F;
+  --mint-600: #2D7A71;
+  --mint-700: #1F5F58;
 
   --teal-300: #80D1BA;
   --teal-400: #5EEAD4;
@@ -42,6 +42,9 @@
   --blue-400: #60A5FA;
   --blue-500: #3B82F6;
 
+  --orange-400: #FF9E66;
+  --orange-500: #FF6B35;
+
   /* ─── Dark Theme (default) ─── */
   --bg-primary:     #0a0a0f;
   --bg-secondary:   #111118;
@@ -58,19 +61,19 @@
 
   --border-primary:   rgba(255, 255, 255, 0.06);
   --border-secondary: rgba(255, 255, 255, 0.03);
-  --border-accent:    rgba(255, 158, 102, 0.2);
+  --border-accent:    rgba(128, 209, 186, 0.2);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 60px rgba(255, 158, 102, 0.15);
+  --shadow-glow: 0 0 60px rgba(128, 209, 186, 0.15);
 
   /* ─── Gradient ─── */
-  --gradient-brand: linear-gradient(135deg, var(--orange-400), var(--orange-500));
-  --gradient-brand-wide: linear-gradient(90deg, var(--orange-400), var(--orange-500), var(--teal-400));
-  --gradient-text: linear-gradient(135deg, var(--orange-400) 0%, var(--orange-500) 50%, var(--teal-400) 100%);
+  --gradient-brand: linear-gradient(135deg, var(--mint-300), var(--mint-500));
+  --gradient-brand-wide: linear-gradient(90deg, var(--mint-300), var(--mint-500), var(--teal-400));
+  --gradient-text: linear-gradient(135deg, var(--mint-300) 0%, var(--teal-400) 50%, var(--mint-500) 100%);
   --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
-  --gradient-glow: radial-gradient(ellipse at center, rgba(255,158,102,0.15) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(128,209,186,0.15) 0%, transparent 70%);
 
   /* ─── Typography ─── */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
