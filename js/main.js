@@ -70,23 +70,24 @@ function initSmoothScroll() {
   if (typeof Lenis === 'undefined') return;
 
   lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.0,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
-    smoothWheel: true,
+    smoothWheel: false,       // let native wheel scroll work normally
+    syncTouch: false,         // don't hijack touch either
   });
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // Sync with GSAP ScrollTrigger
+  // Single RAF loop via GSAP ticker (avoid double-raf)
   if (typeof gsap !== 'undefined' && gsap.ticker) {
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
+  } else {
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }
 }
 
