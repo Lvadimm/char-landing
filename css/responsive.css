@@ -40,7 +40,7 @@
   }
 
   .hero__device-wrapper {
-    max-width: 200px;
+    width: 220px;
   }
 
   /* Bento Grid */
@@ -77,7 +77,7 @@
   }
 
   .showcase__device {
-    width: 200px;
+    width: 180px;
   }
 
   .showcase__item {
@@ -113,7 +113,7 @@
   }
 
   .hero__device-wrapper {
-    max-width: 180px;
+    width: 200px;
   }
 
   .hero__scroll-indicator {
@@ -242,7 +242,7 @@
   }
 
   .hero__device-wrapper {
-    max-width: 200px;
+    width: 180px;
   }
 
   .hero__actions {
@@ -266,6 +266,6 @@
 /* ─── Large Desktop (≥1400px) ─── */
 @media (min-width: 1400px) {
   .hero__device-wrapper {
-    max-width: 260px;
+    width: 300px;
   }
 }
