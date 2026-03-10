@@ -4,7 +4,6 @@
    
    Dependencies:
    - GSAP 3.12+ with ScrollTrigger
-   - Lenis 1.1+
    ═══════════════════════════════════════════════════ */
 
 'use strict';
@@ -12,7 +11,6 @@
 // ─── Wait for DOM ───
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
-  initSmoothScroll();
   initNavigation();
   initMobileMenu();
   initRevealAnimations();
@@ -61,35 +59,7 @@ function initLoader() {
   }, 3000);
 }
 
-/* ═══════════════════════════════════════════════════
-   SMOOTH SCROLL (Lenis)
-   ═══════════════════════════════════════════════════ */
-let lenis;
 
-function initSmoothScroll() {
-  if (typeof Lenis === 'undefined') return;
-
-  lenis = new Lenis({
-    duration: 1.0,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    smoothWheel: false,       // let native wheel scroll work normally
-    syncTouch: false,         // don't hijack touch either
-  });
-
-  // Single RAF loop via GSAP ticker (avoid double-raf)
-  if (typeof gsap !== 'undefined' && gsap.ticker) {
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
-  } else {
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
-}
 
 /* ═══════════════════════════════════════════════════
    NAVIGATION
@@ -129,11 +99,9 @@ function initNavigation() {
         closeMobileMenu();
       }
 
-      if (lenis) {
-        lenis.scrollTo(target, { offset: -80, duration: 1.2 });
-      } else {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      const navHeight = document.getElementById('nav')?.offsetHeight || 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 }
@@ -164,7 +132,6 @@ function openMobileMenu() {
   menu.classList.add('mobile-menu--open');
   menu.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
-  if (lenis) lenis.stop();
 }
 
 function closeMobileMenu() {
@@ -175,7 +142,6 @@ function closeMobileMenu() {
   menu.classList.remove('mobile-menu--open');
   menu.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
-  if (lenis) lenis.start();
 }
 
 /* ═══════════════════════════════════════════════════
