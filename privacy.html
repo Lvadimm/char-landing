@@ -18,427 +18,35 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- Stylesheets (same as main page) -->
+  <link rel="stylesheet" href="css/variables.css?v=3">
+  <link rel="stylesheet" href="css/base.css?v=3">
+  <link rel="stylesheet" href="css/components.css?v=3">
+  <link rel="stylesheet" href="css/privacy.css?v=3">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link rel="stylesheet" href="css/variables.css">
-
-  <style>
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--color-bg);
-      color: var(--color-text-secondary);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    ::selection {
-      background: rgba(128, 209, 186, 0.3);
-      color: var(--color-text-primary);
-    }
-
-    a {
-      color: var(--color-brand);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    a:hover {
-      color: var(--color-brand-light);
-    }
-
-    /* ─── Navigation ─── */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      background: rgba(10, 10, 15, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .nav__inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav__logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--color-text-primary);
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .nav__logo-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--gradient-brand);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.85rem;
-      color: #fff;
-    }
-
-    .nav__back {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--color-text-tertiary);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav__back:hover {
-      color: var(--color-text-primary);
-    }
-
-    .nav__back svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* ─── Page Container ─── */
-    .privacy-page {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 8rem 2rem 6rem;
-    }
-
-    /* ─── Header ─── */
-    .privacy-header {
-      margin-bottom: 4rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .privacy-header__tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      background: rgba(128, 209, 186, 0.08);
-      border: 1px solid rgba(128, 209, 186, 0.15);
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--color-brand);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .privacy-header__tag svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .privacy-header h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      color: var(--color-text-primary);
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
-
-    .privacy-header__meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      color: var(--color-text-tertiary);
-      font-size: 0.9rem;
-    }
-
-    .privacy-header__meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    /* ─── Table of Contents ─── */
-    .toc {
-      margin-bottom: 3.5rem;
-      padding: 1.75rem 2rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 16px;
-    }
-
-    .toc__title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-text-tertiary);
-      margin-bottom: 1rem;
-    }
-
-    .toc__list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 0.5rem;
-    }
-
-    .toc__list a {
-      display: block;
-      padding: 0.4rem 0;
-      color: var(--color-text-secondary);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s, transform 0.2s;
-    }
-
-    .toc__list a:hover {
-      color: var(--color-brand);
-      transform: translateX(4px);
-    }
-
-    .toc__list a span {
-      color: var(--color-brand);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      margin-right: 0.5rem;
-      opacity: 0.6;
-    }
-
-    /* ─── Content Sections ─── */
-    .privacy-section {
-      margin-bottom: 3rem;
-      scroll-margin-top: 6rem;
-    }
-
-    .privacy-section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .privacy-section h2 .section-number {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-brand);
-      opacity: 0.5;
-      min-width: 2ch;
-    }
-
-    .privacy-section h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--color-text-primary);
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .privacy-section p {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    .privacy-section ul {
-      list-style: none;
-      margin-bottom: 1.25rem;
-      padding-left: 0;
-    }
-
-    .privacy-section ul li {
-      position: relative;
-      padding-left: 1.75rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .privacy-section ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.65em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--color-brand);
-      opacity: 0.5;
-    }
-
-    .privacy-section strong {
-      color: var(--color-text-primary);
-      font-weight: 600;
-    }
-
-    /* ─── Highlight Boxes ─── */
-    .privacy-highlight {
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    .privacy-highlight--info {
-      background: rgba(96, 165, 250, 0.06);
-      border: 1px solid rgba(96, 165, 250, 0.12);
-      color: #93C5FD;
-    }
-
-    .privacy-highlight--good {
-      background: rgba(74, 222, 128, 0.06);
-      border: 1px solid rgba(74, 222, 128, 0.12);
-      color: #86EFAC;
-    }
-
-    /* ─── Data Types Grid ─── */
-    .data-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin: 1.25rem 0 1.5rem;
-    }
-
-    .data-grid__col h4 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-text-tertiary);
-      margin-bottom: 0.75rem;
-    }
-
-    .data-grid__col ul li {
-      font-size: 0.85rem;
-      margin-bottom: 0.4rem;
-    }
-
-    /* ─── Divider ─── */
-    .privacy-divider {
-      border: none;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.06);
-      margin: 3rem 0;
-    }
-
-    /* ─── Contact Section ─── */
-    .privacy-contact {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 20px;
-      margin-top: 4rem;
-    }
-
-    .privacy-contact h2 {
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-
-    .privacy-contact p {
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-      text-align: center;
-    }
-
-    .privacy-contact__email {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--gradient-brand);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border-radius: 12px;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .privacy-contact__email:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-      color: #fff;
-    }
-
-    /* ─── Footer ─── */
-    .privacy-footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      color: var(--color-text-tertiary);
-      font-size: 0.8rem;
-    }
-
-    .privacy-footer a {
-      color: var(--color-text-secondary);
-    }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      .privacy-page {
-        padding: 6rem 1.25rem 4rem;
-      }
-
-      .privacy-header h1 {
-        font-size: 1.75rem;
-      }
-
-      .toc__list {
-        grid-template-columns: 1fr;
-      }
-
-      .data-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        padding: 0.75rem 1.25rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .privacy-header__meta {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-    }
-  </style>
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 
 <body>
-  <!-- ─── Navigation ─── -->
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
-        <div class="nav__logo-icon">C</div>
-        CHAR
+  <!-- ─── Background Orbs ─── -->
+  <div class="privacy-page__bg" aria-hidden="true">
+    <div class="privacy-page__orb privacy-page__orb--1"></div>
+    <div class="privacy-page__orb privacy-page__orb--2"></div>
+  </div>
+
+  <!-- ─── Cursor Glow (desktop only) ─── -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ─── Navigation (same structure as main page) ─── -->
+  <nav class="nav nav--scrolled" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo" aria-label="CHAR Home">
+        <img class="nav__logo-icon" src="assets/icons/favicon.svg" alt="CHAR" width="36" height="36" style="border-radius: 10px;">
+        <span class="nav__brand">CHAR</span>
       </a>
       <a href="index.html" class="nav__back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
@@ -448,17 +56,17 @@
   </nav>
 
   <!-- ─── Privacy Policy ─── -->
-  <main class="privacy-page">
+  <main class="privacy-page__content">
     <header class="privacy-header">
       <div class="privacy-header__tag">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Privacy Policy
       </div>
-      <h1>Your data stays<br>on your device.</h1>
+      <h1>Your data stays<br>on your <span class="gradient-text">device.</span></h1>
       <div class="privacy-header__meta">
-        <span>📱 CHAR — Nutrition &amp; Health Companion</span>
-        <span>📅 Last Updated: 1 March 2026</span>
-        <span>✅ Effective: 1 March 2026</span>
+        <span>CHAR — Nutrition & Health Companion</span>
+        <span>Last Updated: 1 March 2026</span>
+        <span>Effective: 1 March 2026</span>
       </div>
     </header>
 
@@ -470,13 +78,13 @@
         <li><a href="#information-collected"><span>02</span> Information We Collect</a></li>
         <li><a href="#how-we-use"><span>03</span> How We Use Your Information</a></li>
         <li><a href="#on-device-ai"><span>04</span> On-Device AI Processing</a></li>
-        <li><a href="#storage-security"><span>05</span> Data Storage &amp; Security</a></li>
+        <li><a href="#storage-security"><span>05</span> Data Storage & Security</a></li>
         <li><a href="#third-party"><span>06</span> Third-Party Services</a></li>
         <li><a href="#data-sharing"><span>07</span> Data Sharing</a></li>
         <li><a href="#data-retention"><span>08</span> Data Retention</a></li>
         <li><a href="#your-rights"><span>09</span> Your Rights</a></li>
         <li><a href="#children"><span>10</span> Children's Privacy</a></li>
-        <li><a href="#advertising"><span>11</span> Advertising &amp; Tracking</a></li>
+        <li><a href="#advertising"><span>11</span> Advertising & Tracking</a></li>
         <li><a href="#changes"><span>12</span> Changes to This Policy</a></li>
         <li><a href="#contact"><span>13</span> Contact Us</a></li>
       </ol>
@@ -502,7 +110,7 @@
         <li><strong>Body Measurements:</strong> Weight logs and body composition data.</li>
         <li><strong>Workout Data:</strong> Exercise type, name, duration, and calories burned.</li>
         <li><strong>Fasting Data:</strong> Fasting protocols, start and end times, and completion status.</li>
-        <li><strong>Mood &amp; Wellbeing Data:</strong> Mood ratings, journal notes, and associated tags.</li>
+        <li><strong>Mood & Wellbeing Data:</strong> Mood ratings, journal notes, and associated tags.</li>
         <li><strong>Habit Tracking:</strong> Habit names, completion logs, and associated notes.</li>
         <li><strong>Progress Photos:</strong> Photos you choose to take or import to track your physical progress.</li>
         <li><strong>Planner Data:</strong> Tasks, routines, categories, schedules, and completion logs.</li>
@@ -573,7 +181,7 @@
       <p>CHAR uses artificial intelligence to enhance your experience. It is important to understand that:</p>
       <ul>
         <li><strong>Food Recognition:</strong> Powered by an on-device CoreML model. Camera images are analysed entirely on your device. No images are sent to any server.</li>
-        <li><strong>Nutrition Insights &amp; AI Coach:</strong> Powered by Apple Foundation Models (Apple Intelligence), which runs entirely on your device. Your health and nutrition data is processed locally and never leaves your device for AI purposes.</li>
+        <li><strong>Nutrition Insights & AI Coach:</strong> Powered by Apple Foundation Models (Apple Intelligence), which runs entirely on your device. Your health and nutrition data is processed locally and never leaves your device for AI purposes.</li>
         <li><strong>Voice Entry:</strong> Processed using Apple's on-device Speech Recognition framework.</li>
       </ul>
       <div class="privacy-highlight privacy-highlight--info">
@@ -583,7 +191,7 @@
 
     <!-- 5. Data Storage and Security -->
     <section class="privacy-section" id="storage-security">
-      <h2><span class="section-number">05</span> Data Storage &amp; Security</h2>
+      <h2><span class="section-number">05</span> Data Storage & Security</h2>
 
       <h3>5.1 Local Storage</h3>
       <p>All your data is stored locally on your device using Apple's CoreData framework (SQLite database). This includes all nutrition entries, health data, habits, planner tasks, mood entries, progress photos, and personal profile information.</p>
@@ -696,7 +304,7 @@
 
     <!-- 11. Advertising and Tracking -->
     <section class="privacy-section" id="advertising">
-      <h2><span class="section-number">11</span> Advertising &amp; Tracking</h2>
+      <h2><span class="section-number">11</span> Advertising & Tracking</h2>
       <div class="privacy-highlight privacy-highlight--good">
         CHAR contains no advertising, no tracking SDKs, no analytics services, and no user behaviour monitoring.
       </div>
@@ -723,9 +331,58 @@
     </div>
   </main>
 
-  <footer class="privacy-footer">
-    <p>&copy; 2026 Evo Solutions. All rights reserved.</p>
-    <p style="margin-top: 0.5rem"><a href="index.html">Back to CHAR Home</a></p>
+  <!-- ─── Footer (same as main page) ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img class="footer__logo-icon" src="assets/icons/favicon.svg" alt="CHAR" width="40" height="40" style="border-radius: 10px;">
+            <span>CHAR</span>
+          </a>
+          <p class="footer__tagline">Your personalised nutrition engine.<br>Built with privacy at its core.</p>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#ai">CHAR Intelligence</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+          <div class="footer__col">
+            <h4>Legal</h4>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer__col">
+            <h4>Contact</h4>
+            <a href="mailto:support@char-app.pro">support@char-app.pro</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Evo Solutions. All rights reserved.</p>
+        <p class="footer__made">Designed for iPhone with &#10084;&#65039;</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- ─── Cursor Glow Script ─── -->
+  <script>
+    (function() {
+      var glow = document.querySelector('.cursor-glow');
+      if (!glow || window.matchMedia('(hover: none)').matches) return;
+      document.addEventListener('mousemove', function(e) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+        glow.classList.add('cursor-glow--visible');
+      });
+      document.addEventListener('mouseleave', function() {
+        glow.classList.remove('cursor-glow--visible');
+      });
+    })();
+  </script>
 </body>
 </html>
