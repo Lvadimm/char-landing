@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initRevealAnimations();
   initCounterAnimations();
-  initBentoCardGlow();
   initFAQ();
   initCursorGlow();
   initMarqueeSpeed();
@@ -312,23 +311,6 @@ function animateCounter(el) {
   }
   
   requestAnimationFrame(update);
-}
-
-/* ═══════════════════════════════════════════════════
-   BENTO CARD GLOW EFFECT
-   ═══════════════════════════════════════════════════ */
-function initBentoCardGlow() {
-  const cards = document.querySelectorAll('.bento__card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
 }
 
 /* ═══════════════════════════════════════════════════

@@ -248,175 +248,107 @@
         <p class="section-subtitle reveal-up" data-delay="0.2">One app replaces your calorie counter, fasting timer, workout log, habit tracker, planner, and more — beautifully unified.</p>
       </div>
 
-      <!-- Bento Grid -->
-      <div class="bento" id="bento-grid">
-        <!-- Large card: Nutrition -->
-        <div class="bento__card bento__card--lg reveal-up" data-delay="0.1">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--mint">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-            <h3 class="bento__title">Smart Nutrition Tracking</h3>
-            <p class="bento__desc">Log meals by scanning food with your camera, scanning barcodes, speaking what you ate, searching restaurants, or typing it in. Get instant calorie and macro breakdowns with personalised daily goals.</p>
-            <div class="bento__visual bento__visual--nutrition">
-              <div class="bento__nutrition-ring">
-                <svg viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(128,209,186,0.1)" stroke-width="6"/>
-                  <circle class="bento__ring-progress" cx="50" cy="50" r="42" fill="none" stroke="url(#bento-ring)" stroke-width="6" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="79" transform="rotate(-90 50 50)"/>
-                  <defs><linearGradient id="bento-ring" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#80D1BA"/><stop offset="100%" stop-color="#3D9B8F"/></linearGradient></defs>
-                </svg>
-                <span class="bento__ring-label">1,850<small>kcal</small></span>
-              </div>
-              <div class="bento__macro-pills">
-                <span class="bento__pill bento__pill--protein">P 140g</span>
-                <span class="bento__pill bento__pill--carbs">C 200g</span>
-                <span class="bento__pill bento__pill--fat">F 65g</span>
-              </div>
-            </div>
+      <!-- Features List -->
+      <div class="features__list">
+        <!-- Feature 1: Smart Nutrition Tracking -->
+        <div class="features__item reveal-up" data-delay="0.1">
+          <div class="features__item-phone">
+            <img src="assets/images/screen-smar_nutrition.png?v=3" alt="CHAR smart nutrition tracking with calorie and macro breakdown" class="features__item-img" loading="lazy">
+          </div>
+          <div class="features__item-text">
+            <span class="features__item-badge">Smart Nutrition Tracking</span>
+            <h3>Every calorie, accounted for.</h3>
+            <p>Log meals by scanning food with your camera, scanning barcodes, speaking what you ate, searching restaurants, or typing it in. Get instant calorie and macro breakdowns with personalised daily goals.</p>
+            <ul class="features__item-list">
+              <li>5 ways to log: camera, barcode, voice, search, manual</li>
+              <li>Instant calorie and macro breakdown</li>
+              <li>Personalised daily nutrition goals</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Medium card: Fasting -->
-        <div class="bento__card bento__card--md reveal-up" data-delay="0.2">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--purple">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h3 class="bento__title">Intermittent Fasting</h3>
-            <p class="bento__desc">6 built-in protocols including 16:8, 20:4, and OMAD. A beautiful progress ring with live timer right on your Lock Screen.</p>
-            <div class="bento__visual bento__visual--fasting">
-              <div class="bento__timer">
-                <div class="bento__timer-ring">
-                  <svg viewBox="0 0 80 80">
-                    <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,0.15)" stroke-width="5"/>
-                    <circle class="bento__timer-progress" cx="40" cy="40" r="34" fill="none" stroke="#A855F7" stroke-width="5" stroke-linecap="round" stroke-dasharray="214" stroke-dashoffset="64" transform="rotate(-90 40 40)"/>
-                  </svg>
-                  <span class="bento__timer-text">12:34</span>
-                </div>
-                <span class="bento__timer-label">16:8 Protocol</span>
-              </div>
-            </div>
+        <!-- Feature 2: Mood Tracking (reversed) -->
+        <div class="features__item features__item--reverse reveal-up" data-delay="0.1">
+          <div class="features__item-phone">
+            <img src="assets/images/screen-Mood_Tracking.png?v=3" alt="CHAR mood tracking with daily check-ins and mood trends" class="features__item-img" loading="lazy">
+          </div>
+          <div class="features__item-text">
+            <span class="features__item-badge">Mood Tracking</span>
+            <h3>Know how you feel.</h3>
+            <p>Quick daily check-ins with journal notes and mood trends over time. Spot patterns between your nutrition, sleep, workouts, and emotional wellbeing.</p>
+            <ul class="features__item-list">
+              <li>Quick daily mood check-ins</li>
+              <li>Journal notes for deeper reflection</li>
+              <li>Mood trends and pattern detection</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Medium card: Planner -->
-        <div class="bento__card bento__card--md reveal-up" data-delay="0.3">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--teal">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
-            <h3 class="bento__title">Smart Planner</h3>
-            <p class="bento__desc">Add tasks by typing or speaking naturally. Say "Gym at 5pm, high priority" and CHAR creates a structured entry with time and priority.</p>
-            <div class="bento__visual bento__visual--planner">
-              <div class="bento__tasks">
-                <div class="bento__task bento__task--done"><span class="bento__check">✓</span> Morning workout</div>
-                <div class="bento__task bento__task--done"><span class="bento__check">✓</span> Meal prep</div>
-                <div class="bento__task bento__task--active"><span class="bento__check-empty"></span> Review quarterly report</div>
-                <div class="bento__task"><span class="bento__check-empty"></span> Evening walk</div>
-              </div>
-            </div>
+        <!-- Feature 3: Focus Timer -->
+        <div class="features__item reveal-up" data-delay="0.1">
+          <div class="features__item-phone">
+            <img src="assets/images/screen-focus.png?v=3" alt="CHAR focus timer with Pomodoro and deep work sessions" class="features__item-img" loading="lazy">
+          </div>
+          <div class="features__item-text">
+            <span class="features__item-badge">Focus Timer</span>
+            <h3>Deep work, made simple.</h3>
+            <p>Pomodoro and deep work sessions with ambient themes like Ocean, Forest, and Cosmos. Stay in the zone with gentle notifications and session history.</p>
+            <ul class="features__item-list">
+              <li>Pomodoro and custom deep work modes</li>
+              <li>Ambient soundscapes: Ocean, Forest, Cosmos</li>
+              <li>Session history and focus streaks</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Small card: Focus Timer -->
-        <div class="bento__card bento__card--sm reveal-up" data-delay="0.15">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--indigo">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <h3 class="bento__title">Focus Timer</h3>
-            <p class="bento__desc">Pomodoro and deep work sessions with ambient themes like Ocean, Forest, and Cosmos.</p>
+        <!-- Feature 4: Weight Trends (reversed) -->
+        <div class="features__item features__item--reverse reveal-up" data-delay="0.1">
+          <div class="features__item-phone">
+            <img src="assets/images/screen-weight.png?v=3" alt="CHAR weight tracking with visual trends and progress graphs" class="features__item-img" loading="lazy">
+          </div>
+          <div class="features__item-text">
+            <span class="features__item-badge">Weight Trends</span>
+            <h3>See the bigger picture.</h3>
+            <p>Track your weight over time with visual graphs and see how your metabolism adapts. Smoothed trend lines cut through daily fluctuations so you can focus on real progress.</p>
+            <ul class="features__item-list">
+              <li>Visual weight graphs over time</li>
+              <li>Smoothed trend lines for real progress</li>
+              <li>Goal tracking with milestones</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Small card: Mood -->
-        <div class="bento__card bento__card--sm reveal-up" data-delay="0.25">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--pink">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            </div>
-            <h3 class="bento__title">Mood Tracking</h3>
-            <p class="bento__desc">Quick daily check-ins with journal notes and mood trends over time.</p>
+        <!-- Feature 5: Progress Photos -->
+        <div class="features__item reveal-up" data-delay="0.1">
+          <div class="features__item-phone">
+            <img src="assets/images/screen-progress_photo.png?v=3" alt="CHAR progress photos with before and after comparison" class="features__item-img" loading="lazy">
+          </div>
+          <div class="features__item-text">
+            <span class="features__item-badge">Progress Photos</span>
+            <h3>Your transformation, side by side.</h3>
+            <p>Before &amp; after comparison with a timeline to visualise your transformation. Capture progress photos and swipe through your journey to see how far you've come.</p>
+            <ul class="features__item-list">
+              <li>Before &amp; after side-by-side comparison</li>
+              <li>Timeline view of your journey</li>
+              <li>Private and secure on your device</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Small card: Habits -->
-        <div class="bento__card bento__card--sm reveal-up" data-delay="0.35">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--green">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 class="bento__title">Habit Builder</h3>
-            <p class="bento__desc">Track daily habits with a satisfying checklist and see your completion ring fill up.</p>
+        <!-- Feature 6: Workout Logging (reversed) -->
+        <div class="features__item features__item--reverse reveal-up" data-delay="0.1">
+          <div class="features__item-phone">
+            <img src="assets/images/screen-workout_log.png?v=3" alt="CHAR workout logging with exercise tracking and calorie burn" class="features__item-img" loading="lazy">
           </div>
-        </div>
-
-        <!-- Wide card: Workouts -->
-        <div class="bento__card bento__card--wide reveal-up" data-delay="0.2">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--red">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <div class="bento__wide-layout">
-              <div>
-                <h3 class="bento__title">Workout Logging</h3>
-                <p class="bento__desc">Log 15+ workout types from running to yoga. See calorie burn estimates, track your history, and monitor Recovery, Strain, and Sleep scores from your health data.</p>
-              </div>
-              <div class="bento__health-scores">
-                <div class="bento__score">
-                  <div class="bento__score-ring" style="--progress: 82; --color: #4ADE80">
-                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="rgba(74,222,128,0.15)" stroke-width="4"/><circle cx="30" cy="30" r="25" fill="none" stroke="#4ADE80" stroke-width="4" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="28" transform="rotate(-90 30 30)"/></svg>
-                    <span>82</span>
-                  </div>
-                  <small>Recovery</small>
-                </div>
-                <div class="bento__score">
-                  <div class="bento__score-ring" style="--progress: 65; --color: #F97316">
-                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="rgba(249,115,22,0.15)" stroke-width="4"/><circle cx="30" cy="30" r="25" fill="none" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="55" transform="rotate(-90 30 30)"/></svg>
-                    <span>65</span>
-                  </div>
-                  <small>Strain</small>
-                </div>
-                <div class="bento__score">
-                  <div class="bento__score-ring" style="--progress: 91; --color: #818CF8">
-                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="rgba(129,140,248,0.15)" stroke-width="4"/><circle cx="30" cy="30" r="25" fill="none" stroke="#818CF8" stroke-width="4" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="14" transform="rotate(-90 30 30)"/></svg>
-                    <span>91</span>
-                  </div>
-                  <small>Sleep</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Small card: Weight -->
-        <div class="bento__card bento__card--sm reveal-up" data-delay="0.3">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--yellow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
-            </div>
-            <h3 class="bento__title">Weight Trends</h3>
-            <p class="bento__desc">Track your weight over time with visual graphs and see how your metabolism adapts.</p>
-          </div>
-        </div>
-
-        <!-- Small card: Progress Photos -->
-        <div class="bento__card bento__card--sm reveal-up" data-delay="0.4">
-          <div class="bento__card-glow"></div>
-          <div class="bento__card-content">
-            <div class="bento__icon bento__icon--cyan">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            </div>
-            <h3 class="bento__title">Progress Photos</h3>
-            <p class="bento__desc">Before &amp; after comparison with a timeline to visualise your transformation.</p>
+          <div class="features__item-text">
+            <span class="features__item-badge">Workout Logging</span>
+            <h3>Every rep counts.</h3>
+            <p>Log 15+ workout types from running to yoga. See calorie burn estimates, track your history, and monitor Recovery, Strain, and Sleep scores from your health data.</p>
+            <ul class="features__item-list">
+              <li>15+ workout types supported</li>
+              <li>Calorie burn estimates per session</li>
+              <li>Recovery, Strain &amp; Sleep scores</li>
+            </ul>
           </div>
         </div>
       </div>
